@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace BitCollegeWeb.Entities
 {
-    public class TeacherSection
+    public class Announcement
     {
-        public int TeacherId { get; set; }
+        public int AnnouncementId { get; set; }
+        public string Title { get; set; }
+        public DateTime DateLimit { get; set; }
+        public string Description { get; set; }
         public int SectionId { get; set; }
-        public virtual Teacher Teacher { get; set; }
         public virtual Section Section { get; set; }
     }
 }

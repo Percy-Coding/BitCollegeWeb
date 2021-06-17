@@ -17,7 +17,8 @@ namespace BitCollegeWeb.Entities
         public virtual ProgrammingStudy ProgrammingStudy { get; set; }
         public virtual ICollection<SectionTypeSection> SectionTypeSections { get; set; }
         public virtual ICollection<Classroom> Classrooms { get; set; }
-        public virtual ICollection<TeacherSection> UserSections { get; set; }
+        public virtual ICollection<TeacherSection> TeacherSections { get; set; }
+        public virtual ICollection<StudentSection> StudentSections { get; set; }
         public virtual ICollection<Announcement> Announcements { get; set; }
         public virtual ICollection<Assignment> Assignments { get; set; }
         public virtual ICollection<Exam> Exams { get; set; }

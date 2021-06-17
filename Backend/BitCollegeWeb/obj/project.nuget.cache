@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jkcx2hCmeZ5fuDUtu4D4f12yl7jlOeiqT4cgWFRo1nPD2I4wmug87Z3mn68f5vr5fsYcjixJHESx55DACn5ZAg==",
+  "dgSpecHash": "Bu9XeZMYLuYIOKvH02WnLTnpUJpmFYkcYthEmgsVtVllBv3jgaQYsqS3Sp/11c7lqwrLMIFi92oQRAV7jd5adw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb\\BitCollegeWeb.csproj",
+  "projectFilePath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb\\BitCollegeWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

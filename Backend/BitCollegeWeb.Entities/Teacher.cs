@@ -14,5 +14,6 @@ namespace BitCollegeWeb.Entities
         public virtual ICollection<Notification> Notifications { get; set; }
         public virtual ICollection<Registration> Registrations { get; set; }
         public virtual ICollection<Chat> Chats { get; set; }
+        public virtual ICollection<TeacherSection> TeacherSections { get; set; }
     }
 }
