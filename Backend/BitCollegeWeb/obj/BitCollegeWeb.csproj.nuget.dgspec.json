@@ -1,21 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb\\BitCollegeWeb.csproj": {}
+    "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb\\BitCollegeWeb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj": {
+    "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj",
+        "projectUniqueName": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj",
         "projectName": "BitCollegeWeb.Data",
-        "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj",
-        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb.Data\\obj\\",
+        "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj",
+        "packagesPath": "C:\\Users\\percy\\.nuget\\packages\\",
+        "outputPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\percy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -28,8 +35,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj": {
-                "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj"
+              "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj": {
+                "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj"
               }
             }
           }
@@ -58,22 +65,29 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj": {
+    "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj",
+        "projectUniqueName": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj",
         "projectName": "BitCollegeWeb.Entities",
-        "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj",
-        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb.Entities\\obj\\",
+        "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj",
+        "packagesPath": "C:\\Users\\percy\\.nuget\\packages\\",
+        "outputPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\percy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -112,22 +126,29 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb\\BitCollegeWeb.csproj": {
+    "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb\\BitCollegeWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb\\BitCollegeWeb.csproj",
+        "projectUniqueName": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb\\BitCollegeWeb.csproj",
         "projectName": "BitCollegeWeb",
-        "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb\\BitCollegeWeb.csproj",
-        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb\\obj\\",
+        "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb\\BitCollegeWeb.csproj",
+        "packagesPath": "C:\\Users\\percy\\.nuget\\packages\\",
+        "outputPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\percy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -140,11 +161,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj": {
-                "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj"
+              "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj": {
+                "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj"
               },
-              "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj": {
-                "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj"
+              "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj": {
+                "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj"
               }
             }
           }
@@ -182,7 +203,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
