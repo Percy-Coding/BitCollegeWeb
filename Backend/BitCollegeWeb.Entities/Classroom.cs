@@ -16,5 +16,6 @@ namespace BitCollegeWeb.Entities
         public virtual TeacherForum TeacherForum { get; set; }
         public virtual ICollection<ClassroomExternalTool> ClassroomExternalTools { get; set; }
         public virtual Section Section { get; set; }
+        public virtual ICollection<Chat> Chats { get; set; }
     }
 }

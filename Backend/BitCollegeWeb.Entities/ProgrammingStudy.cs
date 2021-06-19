@@ -17,5 +17,6 @@ namespace BitCollegeWeb.Entities
         public virtual TypeStudy TypeStudy { get; set; }
         public virtual TypeProgrammingClass TypeProgrammingClass { get; set; }
         public virtual ICollection<GeneralInformation> GeneralInformations { get; set; }
+        public virtual ICollection<Inscription> Inscriptions { get; set; }
     }
 }
