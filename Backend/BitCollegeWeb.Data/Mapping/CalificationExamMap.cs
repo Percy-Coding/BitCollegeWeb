@@ -15,13 +15,13 @@ namespace BitCollegeWeb.Data.Mapping
         {
             builder.ToTable("calification_exam");
             //PK
-            builder.HasKey(u => u.CalificationExamId);
-            builder.Property(u => u.CalificationExamId)
+            builder.HasKey(ce => ce.CalificationExamId);
+            builder.Property(ce => ce.CalificationExamId)
                 .HasColumnName("calification_exam_id")
                 .ValueGeneratedOnAdd();
 
             //note
-            builder.Property(u => u.Note)
+            builder.Property(ce => ce.Note)
                 .HasColumnName("note")
                 .IsRequired();
         }

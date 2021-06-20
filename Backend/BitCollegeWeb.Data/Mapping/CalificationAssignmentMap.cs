@@ -15,25 +15,25 @@ namespace BitCollegeWeb.Data.Mapping
         {
             builder.ToTable("calification_assignment");
             //PK
-            builder.HasKey(u => u.CalificationAssignmentId);
-            builder.Property(u => u.CalificationAssignmentId)
+            builder.HasKey(ca => ca.CalificationAssignmentId);
+            builder.Property(ca => ca.CalificationAssignmentId)
                 .HasColumnName("calification_assignment_id")
                 .ValueGeneratedOnAdd();
 
             //note
-            builder.Property(u => u.Note)
+            builder.Property(ca => ca.Note)
                 .HasColumnName("note")
                 .IsRequired();
 
             //commend
-            builder.Property(u => u.Comment)
+            builder.Property(ca => ca.Comment)
                  .HasColumnName("comment")
                  .HasMaxLength(500)
                  .IsUnicode(false)
                  .IsRequired();
 
             //comment_published
-            builder.Property(u => u.CommentPublished)
+            builder.Property(ca => ca.CommentPublished)
                   .HasColumnName("comment_published")
                   .HasDefaultValueSql("((0))");
         }

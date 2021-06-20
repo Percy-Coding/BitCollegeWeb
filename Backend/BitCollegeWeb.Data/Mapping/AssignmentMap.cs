@@ -15,62 +15,66 @@ namespace BitCollegeWeb.Data.Mapping
         {       
             builder.ToTable("assignment");
             //PK
-            builder.HasKey(u => u.AssignmentId);
-            builder.Property(u => u.AssignmentId)
+            builder.HasKey(ag => ag.AssignmentId);
+            builder.Property(ag => ag.AssignmentId)
                 .HasColumnName("assignment_id")
                 .ValueGeneratedOnAdd();
 
             //title
-            builder.Property(u => u.Title)
+            builder.Property(ag => ag.Title)
                 .HasColumnName("title")
                 .HasMaxLength(128)
                 .IsUnicode(false)
                 .IsRequired();
 
-            /*date_limit
+            //date_limit
+            builder.Property(ag => ag.DateLimit)
+                .HasColumnName("date_limit")
+                .IsRequired();
 
-            TODO TODO TODO TODO
-
-            */
             //description
-            builder.Property(u => u.Description)
+            builder.Property(ag => ag.Description)
+                .HasColumnName("description")
                 .HasMaxLength(500)
                 .IsUnicode(false)
                 .IsRequired();
 
-            /*section_id
+            //section_id
+            builder.Property(ag => ag.SectionId)
+                .HasColumnName("section_id");
 
-            TODO TODO TODO TODO
+            //document
+            builder.Property(ag => ag.DocumentLink)
+                .HasColumnName("document_link")
+                .HasMaxLength(500)
+                .IsUnicode(false);
 
-            */
-
-            /*document
-
-            TODO TODO TODO TODO
-
-            */
-
-            /*shipping_date
-
-            TODO TODO TODO TODO
-
-            */
+            //shipping_date
+            builder.Property(ag => ag.ShippingDate)
+                .HasColumnName("shipping_date");
 
             //pending
-            builder.Property(u => u.PendingComplete)
+            builder.Property(ag => ag.PendingComplete)
                  .HasColumnName("pending_complete")
                  .HasDefaultValueSql("((0))");
 
-            //pending
-            builder.Property(u => u.SentNotSent)
+            //sent
+            builder.Property(ag => ag.SentNotSent)
                   .HasColumnName("sent_notsent")
                   .HasDefaultValueSql("((0))");
 
-            /*calification_assignment_id
+            //calification_assignment_id
+            builder.Property(ag => ag.CalificationAssignmentId)
+                  .HasColumnName("calification_assignment_id");
 
-            TODO TODO TODO TODO
+            //FK
+            builder.HasOne(ag => ag.Section)
+                .WithMany(ags => ags.Assignments)
+                .HasForeignKey(ag => ag.SectionId);
 
-            */
+            builder.HasOne(ag => ag.CalificationAssignment)
+                .WithMany(ags => ags.Assignments)
+                .HasForeignKey(ag => ag.CalificationAssignmentId);
 
         }
     }

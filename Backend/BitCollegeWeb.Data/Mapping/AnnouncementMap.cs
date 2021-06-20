@@ -15,34 +15,39 @@ namespace BitCollegeWeb.Data.Mapping
         {
             builder.ToTable("announcement");
             //PK
-            builder.HasKey(u => u.AnnouncementId);
-            builder.Property(u => u.AnnouncementId)
+            builder.HasKey(a => a.AnnouncementId);
+            builder.Property(a => a.AnnouncementId)
                 .HasColumnName("announcement_id")
                 .ValueGeneratedOnAdd();
 
             //title
-            builder.Property(u => u.Title)
+            builder.Property(a => a.Title)
                 .HasColumnName("title")
                 .HasMaxLength(128)
                 .IsUnicode(false)
                 .IsRequired();
 
-            /*date_limit
+            //date_limit
+            builder.Property(a => a.DateLimit)
+                .HasColumnName("date_limit")
+                .IsRequired();
 
-            TODO TODO TODO TODO
-
-            */
             //description
-            builder.Property(u => u.Description)
+            builder.Property(a => a.Description)
+                .HasColumnName("description")
                 .HasMaxLength(500)
                 .IsUnicode(false)
                 .IsRequired();
 
-            /*section_id
+            //section_id
+            builder.Property(a => a.SectionId)
+                .HasColumnName("section_id");
 
-            TODO TODO TODO TODO
+            //FK
+            builder.HasOne(a => a.Section)
+                .WithMany(a => a.Announcements)
+                .HasForeignKey(a => a.SectionId);
 
-            */
         }
     }
 }

@@ -15,15 +15,20 @@ namespace BitCollegeWeb.Data.Mapping
         {
             builder.ToTable("calification_system");
             //PK
-            builder.HasKey(u => u.CalificationSystemId);
-            builder.Property(u => u.CalificationSystemId)
-                .HasColumnName("calification_systemt_id")
+            builder.HasKey(cs => cs.CalificationSystemId);
+            builder.Property(cs => cs.CalificationSystemId)
+                .HasColumnName("calification_system_id")
                 .ValueGeneratedOnAdd();
 
             //number_percentage
-            builder.Property(u => u.NumberPercentage)
+            builder.Property(cs => cs.NumberPercentage)
                 .HasColumnName("number_percentage")
                 .IsRequired();
+
+            //relation 1 to 1  to ProgrammingStudy
+            builder.HasOne(cs => cs.ProgrammingStudy)
+                .WithOne(ps => ps.CalificationSystem)
+                .HasForeignKey<ProgrammingStudy>(ps => ps.CalificationSystemId);
         }
     }
 }
