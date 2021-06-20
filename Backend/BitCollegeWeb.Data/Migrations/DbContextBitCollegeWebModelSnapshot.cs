@@ -261,18 +261,12 @@ namespace BitCollegeWeb.Data.Migrations
                         .HasColumnType("int")
                         .HasColumnName("teacher_forum_id");
 
-                    b.Property<int?>("TeacherForumId1")
-                        .HasColumnType("int");
-
                     b.HasKey("ClassroomId");
 
                     b.HasIndex("SectionId");
 
-                    b.HasIndex("TeacherForumId");
-
-                    b.HasIndex("TeacherForumId1")
-                        .IsUnique()
-                        .HasFilter("[TeacherForumId1] IS NOT NULL");
+                    b.HasIndex("TeacherForumId")
+                        .IsUnique();
 
                     b.ToTable("classroom");
                 });
@@ -585,9 +579,6 @@ namespace BitCollegeWeb.Data.Migrations
                         .HasColumnType("int")
                         .HasColumnName("calification_system_id");
 
-                    b.Property<int?>("CalificationSystemId1")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(128)
@@ -605,11 +596,8 @@ namespace BitCollegeWeb.Data.Migrations
 
                     b.HasKey("ProgrammingStudyId");
 
-                    b.HasIndex("CalificationSystemId");
-
-                    b.HasIndex("CalificationSystemId1")
-                        .IsUnique()
-                        .HasFilter("[CalificationSystemId1] IS NOT NULL");
+                    b.HasIndex("CalificationSystemId")
+                        .IsUnique();
 
                     b.HasIndex("TypeProgrammingClassId");
 
@@ -677,18 +665,12 @@ namespace BitCollegeWeb.Data.Migrations
                         .HasColumnType("int")
                         .HasColumnName("type_programming_class_id");
 
-                    b.Property<int?>("TypeProgrammingClassId1")
-                        .HasColumnType("int");
-
                     b.HasKey("ScheduleId");
 
                     b.HasIndex("StudentId");
 
-                    b.HasIndex("TypeProgrammingClassId");
-
-                    b.HasIndex("TypeProgrammingClassId1")
-                        .IsUnique()
-                        .HasFilter("[TypeProgrammingClassId1] IS NOT NULL");
+                    b.HasIndex("TypeProgrammingClassId")
+                        .IsUnique();
 
                     b.ToTable("schedule");
                 });
@@ -753,7 +735,8 @@ namespace BitCollegeWeb.Data.Migrations
 
                     b.HasKey("SectionId");
 
-                    b.HasIndex("ProgrammingStudyId");
+                    b.HasIndex("ProgrammingStudyId")
+                        .IsUnique();
 
                     b.ToTable("section");
                 });
@@ -796,19 +779,13 @@ namespace BitCollegeWeb.Data.Migrations
                         .HasColumnType("int")
                         .HasColumnName("student_experience_id");
 
-                    b.Property<int?>("StudentExperienceId1")
-                        .HasColumnType("int");
-
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("StudentId");
 
-                    b.HasIndex("StudentExperienceId");
-
-                    b.HasIndex("StudentExperienceId1")
-                        .IsUnique()
-                        .HasFilter("[StudentExperienceId1] IS NOT NULL");
+                    b.HasIndex("StudentExperienceId")
+                        .IsUnique();
 
                     b.ToTable("student");
                 });
@@ -874,19 +851,13 @@ namespace BitCollegeWeb.Data.Migrations
                         .HasColumnType("int")
                         .HasColumnName("teacher_experience_id");
 
-                    b.Property<int?>("TeacherExperienceId1")
-                        .HasColumnType("int");
-
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("TeacherId");
 
-                    b.HasIndex("TeacherExperienceId");
-
-                    b.HasIndex("TeacherExperienceId1")
-                        .IsUnique()
-                        .HasFilter("[TeacherExperienceId1] IS NOT NULL");
+                    b.HasIndex("TeacherExperienceId")
+                        .IsUnique();
 
                     b.ToTable("teacher");
                 });
@@ -1113,7 +1084,6 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.Section", "Section")
                         .WithMany("Announcements")
                         .HasForeignKey("SectionId")
-                        .HasConstraintName("FK_section_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1125,14 +1095,12 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.CalificationAssignment", "CalificationAssignment")
                         .WithMany("Assignments")
                         .HasForeignKey("CalificationAssignmentId")
-                        .HasConstraintName("FK_calification_assignment_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BitCollegeWeb.Entities.Section", "Section")
                         .WithMany("Assignments")
                         .HasForeignKey("SectionId")
-                        .HasConstraintName("FK_section_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1146,14 +1114,12 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.CalificationSystem", "CalificationSystem")
                         .WithMany("CalificationSystemTypeCalifications")
                         .HasForeignKey("CalificationSystemId")
-                        .HasConstraintName("FK_calification_system_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BitCollegeWeb.Entities.TypeCalification", "TypeCalification")
                         .WithMany("CalificationSystemTypeCalifications")
                         .HasForeignKey("TypeCalificationId")
-                        .HasConstraintName("FK_type_calification_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1167,14 +1133,12 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.Classroom", "Classroom")
                         .WithMany("Chats")
                         .HasForeignKey("ClassroomId")
-                        .HasConstraintName("FK_classroom_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BitCollegeWeb.Entities.Teacher", "Teacher")
                         .WithMany("Chats")
                         .HasForeignKey("TeacherId")
-                        .HasConstraintName("FK_teacher_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1188,20 +1152,14 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.Section", "Section")
                         .WithMany("Classrooms")
                         .HasForeignKey("SectionId")
-                        .HasConstraintName("FK_section_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BitCollegeWeb.Entities.TeacherForum", "TeacherForum")
-                        .WithMany()
-                        .HasForeignKey("TeacherForumId")
-                        .HasConstraintName("FK_teacher_forum_id")
+                        .WithOne("Classroom")
+                        .HasForeignKey("BitCollegeWeb.Entities.Classroom", "TeacherForumId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("BitCollegeWeb.Entities.TeacherForum", null)
-                        .WithOne("Classroom")
-                        .HasForeignKey("BitCollegeWeb.Entities.Classroom", "TeacherForumId1");
 
                     b.Navigation("Section");
 
@@ -1213,14 +1171,12 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.Classroom", "Classroom")
                         .WithMany("ClassroomExternalTools")
                         .HasForeignKey("ClassroomId")
-                        .HasConstraintName("FK_classroom_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BitCollegeWeb.Entities.ExternalTool", "ExternalTool")
                         .WithMany("ClassroomExternalTools")
                         .HasForeignKey("ExternalToolId")
-                        .HasConstraintName("FK_external_tool_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1234,7 +1190,6 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.TeacherForum", "TeacherForum")
                         .WithMany("Evidences")
                         .HasForeignKey("TeacherForumId")
-                        .HasConstraintName("FK_teacher_forum_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1246,14 +1201,12 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.CalificationExam", "CalificationExam")
                         .WithMany("Exams")
                         .HasForeignKey("CalificationExamId")
-                        .HasConstraintName("FK_calification_exam_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BitCollegeWeb.Entities.Section", "Section")
                         .WithMany("Exams")
                         .HasForeignKey("SectionId")
-                        .HasConstraintName("FK_section_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1267,14 +1220,12 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.ProgrammingStudy", "ProgrammingStudy")
                         .WithMany("GeneralInformations")
                         .HasForeignKey("ProgrammingStudyId")
-                        .HasConstraintName("FK_programming_study_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BitCollegeWeb.Entities.Topic", "Topic")
                         .WithMany("GeneralInformations")
                         .HasForeignKey("TopicId")
-                        .HasConstraintName("FK_topic_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1288,14 +1239,12 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.ProgrammingStudy", "ProgrammingStudy")
                         .WithMany("Inscriptions")
                         .HasForeignKey("ProgrammingStudyId")
-                        .HasConstraintName("FK_programming_study_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BitCollegeWeb.Entities.Student", "Student")
                         .WithMany("Inscriptions")
                         .HasForeignKey("StudentId")
-                        .HasConstraintName("FK_student_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1309,14 +1258,12 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.Student", "Student")
                         .WithMany("Notifications")
                         .HasForeignKey("StudentId")
-                        .HasConstraintName("FK_student_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BitCollegeWeb.Entities.Teacher", "Teacher")
                         .WithMany("Notifications")
                         .HasForeignKey("TeacherId")
-                        .HasConstraintName("FK_teacher_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1328,27 +1275,20 @@ namespace BitCollegeWeb.Data.Migrations
             modelBuilder.Entity("BitCollegeWeb.Entities.ProgrammingStudy", b =>
                 {
                     b.HasOne("BitCollegeWeb.Entities.CalificationSystem", "CalificationSystem")
-                        .WithMany()
-                        .HasForeignKey("CalificationSystemId")
-                        .HasConstraintName("FK_calification_system_id")
+                        .WithOne("ProgrammingStudy")
+                        .HasForeignKey("BitCollegeWeb.Entities.ProgrammingStudy", "CalificationSystemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("BitCollegeWeb.Entities.CalificationSystem", null)
-                        .WithOne("ProgrammingStudy")
-                        .HasForeignKey("BitCollegeWeb.Entities.ProgrammingStudy", "CalificationSystemId1");
 
                     b.HasOne("BitCollegeWeb.Entities.TypeProgrammingClass", "TypeProgrammingClass")
                         .WithMany("ProgrammingStudies")
                         .HasForeignKey("TypeProgrammingClassId")
-                        .HasConstraintName("FK_type_programming_class_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BitCollegeWeb.Entities.TypeStudy", "TypeStudy")
                         .WithMany("ProgrammingStudies")
                         .HasForeignKey("TypeStudyId")
-                        .HasConstraintName("FK_type_study_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1364,14 +1304,12 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.Student", "Student")
                         .WithMany("Registrations")
                         .HasForeignKey("StudentId")
-                        .HasConstraintName("FK_student_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BitCollegeWeb.Entities.Teacher", "Teacher")
                         .WithMany("Registrations")
                         .HasForeignKey("TeacherId")
-                        .HasConstraintName("FK_teacher_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1385,20 +1323,14 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.Student", "Student")
                         .WithMany("Schedules")
                         .HasForeignKey("StudentId")
-                        .HasConstraintName("FK_student_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BitCollegeWeb.Entities.TypeProgrammingClass", "TypeProgrammingClass")
-                        .WithMany()
-                        .HasForeignKey("TypeProgrammingClassId")
-                        .HasConstraintName("FK_type_programming_class_id")
+                        .WithOne("Schedule")
+                        .HasForeignKey("BitCollegeWeb.Entities.Schedule", "TypeProgrammingClassId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("BitCollegeWeb.Entities.TypeProgrammingClass", null)
-                        .WithOne("Schedule")
-                        .HasForeignKey("BitCollegeWeb.Entities.Schedule", "TypeProgrammingClassId1");
 
                     b.Navigation("Student");
 
@@ -1410,14 +1342,12 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.Day", "Day")
                         .WithMany("ScheduleDays")
                         .HasForeignKey("DayId")
-                        .HasConstraintName("FK_day_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BitCollegeWeb.Entities.Schedule", "Schedule")
                         .WithMany("ScheduleDays")
                         .HasForeignKey("ScheduleId")
-                        .HasConstraintName("FK_schedule_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1429,9 +1359,8 @@ namespace BitCollegeWeb.Data.Migrations
             modelBuilder.Entity("BitCollegeWeb.Entities.Section", b =>
                 {
                     b.HasOne("BitCollegeWeb.Entities.ProgrammingStudy", "ProgrammingStudy")
-                        .WithMany()
-                        .HasForeignKey("ProgrammingStudyId")
-                        .HasConstraintName("FK_programming_study_id")
+                        .WithOne("Section")
+                        .HasForeignKey("BitCollegeWeb.Entities.Section", "ProgrammingStudyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1443,14 +1372,12 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.Section", "Section")
                         .WithMany("SectionTypeSections")
                         .HasForeignKey("SectionId")
-                        .HasConstraintName("FK_section_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BitCollegeWeb.Entities.TypeSection", "TypeSection")
                         .WithMany("SectionTypeSections")
                         .HasForeignKey("TypeSectionId")
-                        .HasConstraintName("FK_type_section_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1462,15 +1389,10 @@ namespace BitCollegeWeb.Data.Migrations
             modelBuilder.Entity("BitCollegeWeb.Entities.Student", b =>
                 {
                     b.HasOne("BitCollegeWeb.Entities.StudentExperience", "StudentExperience")
-                        .WithMany()
-                        .HasForeignKey("StudentExperienceId")
-                        .HasConstraintName("FK_student_experience_id")
+                        .WithOne("Student")
+                        .HasForeignKey("BitCollegeWeb.Entities.Student", "StudentExperienceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("BitCollegeWeb.Entities.StudentExperience", null)
-                        .WithOne("Student")
-                        .HasForeignKey("BitCollegeWeb.Entities.Student", "StudentExperienceId1");
 
                     b.Navigation("StudentExperience");
                 });
@@ -1480,7 +1402,6 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.Institution", "Institution")
                         .WithMany("StudentExperiences")
                         .HasForeignKey("InstitutionId")
-                        .HasConstraintName("FK_institution_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1492,14 +1413,12 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.Section", "Section")
                         .WithMany("StudentSections")
                         .HasForeignKey("SectionId")
-                        .HasConstraintName("FK_section_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BitCollegeWeb.Entities.Student", "Student")
                         .WithMany("StudentSections")
                         .HasForeignKey("StudentId")
-                        .HasConstraintName("FK_student_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1511,15 +1430,10 @@ namespace BitCollegeWeb.Data.Migrations
             modelBuilder.Entity("BitCollegeWeb.Entities.Teacher", b =>
                 {
                     b.HasOne("BitCollegeWeb.Entities.TeacherExperience", "TeacherExperience")
-                        .WithMany()
-                        .HasForeignKey("TeacherExperienceId")
-                        .HasConstraintName("FK_teacher_experience_id")
+                        .WithOne("Teacher")
+                        .HasForeignKey("BitCollegeWeb.Entities.Teacher", "TeacherExperienceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("BitCollegeWeb.Entities.TeacherExperience", null)
-                        .WithOne("Teacher")
-                        .HasForeignKey("BitCollegeWeb.Entities.Teacher", "TeacherExperienceId1");
 
                     b.Navigation("TeacherExperience");
                 });
@@ -1529,7 +1443,6 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.Company", "Company")
                         .WithMany("TeacherExperiences")
                         .HasForeignKey("CompanyId")
-                        .HasConstraintName("FK_company_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1541,14 +1454,12 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.Section", "Section")
                         .WithMany("TeacherSections")
                         .HasForeignKey("SectionId")
-                        .HasConstraintName("FK_section_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BitCollegeWeb.Entities.Teacher", "Teacher")
                         .WithMany("TeacherSections")
                         .HasForeignKey("TeacherId")
-                        .HasConstraintName("FK_teacher_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1562,14 +1473,12 @@ namespace BitCollegeWeb.Data.Migrations
                     b.HasOne("BitCollegeWeb.Entities.ExternalTool", "ExternalTool")
                         .WithMany("URLS")
                         .HasForeignKey("ExternalToolId")
-                        .HasConstraintName("FK_external_tool_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BitCollegeWeb.Entities.Topic", "Topic")
                         .WithMany("URLS")
                         .HasForeignKey("TopicId")
-                        .HasConstraintName("FK_topic_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1629,6 +1538,8 @@ namespace BitCollegeWeb.Data.Migrations
                     b.Navigation("GeneralInformations");
 
                     b.Navigation("Inscriptions");
+
+                    b.Navigation("Section");
                 });
 
             modelBuilder.Entity("BitCollegeWeb.Entities.Schedule", b =>

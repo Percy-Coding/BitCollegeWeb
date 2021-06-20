@@ -25,6 +25,11 @@ namespace BitCollegeWeb.Data.Mapping
                 .HasMaxLength(128)
                 .IsUnicode(false)
                 .IsRequired();
+
+            builder.HasOne(tpc => tpc.Schedule)
+                .WithOne(sch => sch.TypeProgrammingClass)
+                .HasForeignKey<Schedule>(sch => sch.TypeProgrammingClassId); 
+
         }
     }
 }

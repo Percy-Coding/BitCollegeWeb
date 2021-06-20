@@ -24,6 +24,11 @@ namespace BitCollegeWeb.Data.Mapping
             builder.Property(cs => cs.NumberPercentage)
                 .HasColumnName("number_percentage")
                 .IsRequired();
+
+            //relation 1 to 1  to ProgrammingStudy
+            builder.HasOne(cs => cs.ProgrammingStudy)
+                .WithOne(ps => ps.CalificationSystem)
+                .HasForeignKey<ProgrammingStudy>(ps => ps.CalificationSystemId);
         }
     }
 }

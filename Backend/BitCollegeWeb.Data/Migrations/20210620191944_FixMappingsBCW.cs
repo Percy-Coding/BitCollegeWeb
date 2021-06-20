@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BitCollegeWeb.Data.Migrations
 {
-    public partial class BCWDataBaseMigration : Migration
+    public partial class FixMappingsBCW : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -198,7 +198,7 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_teacher_experience", x => x.teacher_experience_id);
                     table.ForeignKey(
-                        name: "FK_company_id",
+                        name: "FK_teacher_experience_company_company_id",
                         column: x => x.company_id,
                         principalTable: "company",
                         principalColumn: "company_id",
@@ -218,7 +218,7 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_student_experience", x => x.student_experience_id);
                     table.ForeignKey(
-                        name: "FK_institution_id",
+                        name: "FK_student_experience_institution_institution_id",
                         column: x => x.institution_id,
                         principalTable: "institution",
                         principalColumn: "institution_id",
@@ -238,7 +238,7 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_evidence", x => x.evidence_id);
                     table.ForeignKey(
-                        name: "FK_teacher_forum_id",
+                        name: "FK_evidence_teacher_forum_teacher_forum_id",
                         column: x => x.teacher_forum_id,
                         principalTable: "teacher_forum",
                         principalColumn: "teacher_forum_id",
@@ -259,13 +259,13 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_url", x => x.url_id);
                     table.ForeignKey(
-                        name: "FK_external_tool_id",
+                        name: "FK_url_external_tool_external_tool_id",
                         column: x => x.external_tool_id,
                         principalTable: "external_tool",
                         principalColumn: "external_tool_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_topic_id",
+                        name: "FK_url_topic_topic_id",
                         column: x => x.topic_id,
                         principalTable: "topic",
                         principalColumn: "topic_id",
@@ -283,13 +283,13 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_calification_system_type_calification", x => new { x.calification_system_id, x.type_calification_id });
                     table.ForeignKey(
-                        name: "FK_calification_system_id",
+                        name: "FK_calification_system_type_calification_calification_system_calification_system_id",
                         column: x => x.calification_system_id,
                         principalTable: "calification_system",
                         principalColumn: "calification_system_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_type_calification_id",
+                        name: "FK_calification_system_type_calification_type_calification_type_calification_id",
                         column: x => x.type_calification_id,
                         principalTable: "type_calification",
                         principalColumn: "type_calification_id",
@@ -305,32 +305,25 @@ namespace BitCollegeWeb.Data.Migrations
                     name = table.Column<string>(type: "varchar(128)", unicode: false, maxLength: 128, nullable: false),
                     type_study_id = table.Column<int>(type: "int", nullable: false),
                     calification_system_id = table.Column<int>(type: "int", nullable: false),
-                    type_programming_class_id = table.Column<int>(type: "int", nullable: false),
-                    CalificationSystemId1 = table.Column<int>(type: "int", nullable: true)
+                    type_programming_class_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_programming_study", x => x.programming_study_id);
                     table.ForeignKey(
-                        name: "FK_calification_system_id",
+                        name: "FK_programming_study_calification_system_calification_system_id",
                         column: x => x.calification_system_id,
                         principalTable: "calification_system",
                         principalColumn: "calification_system_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_programming_study_calification_system_CalificationSystemId1",
-                        column: x => x.CalificationSystemId1,
-                        principalTable: "calification_system",
-                        principalColumn: "calification_system_id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_type_programming_class_id",
+                        name: "FK_programming_study_type_programming_class_type_programming_class_id",
                         column: x => x.type_programming_class_id,
                         principalTable: "type_programming_class",
                         principalColumn: "type_programming_class_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_type_study_id",
+                        name: "FK_programming_study_type_study_type_study_id",
                         column: x => x.type_study_id,
                         principalTable: "type_study",
                         principalColumn: "type_study_id",
@@ -344,7 +337,6 @@ namespace BitCollegeWeb.Data.Migrations
                     teacher_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     teacher_experience_id = table.Column<int>(type: "int", nullable: false),
-                    TeacherExperienceId1 = table.Column<int>(type: "int", nullable: true),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -354,17 +346,11 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_teacher", x => x.teacher_id);
                     table.ForeignKey(
-                        name: "FK_teacher_experience_id",
+                        name: "FK_teacher_teacher_experience_teacher_experience_id",
                         column: x => x.teacher_experience_id,
                         principalTable: "teacher_experience",
                         principalColumn: "teacher_experience_id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_teacher_teacher_experience_TeacherExperienceId1",
-                        column: x => x.TeacherExperienceId1,
-                        principalTable: "teacher_experience",
-                        principalColumn: "teacher_experience_id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -374,7 +360,6 @@ namespace BitCollegeWeb.Data.Migrations
                     student_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     student_experience_id = table.Column<int>(type: "int", nullable: false),
-                    StudentExperienceId1 = table.Column<int>(type: "int", nullable: true),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -384,17 +369,11 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_student", x => x.student_id);
                     table.ForeignKey(
-                        name: "FK_student_experience_id",
+                        name: "FK_student_student_experience_student_experience_id",
                         column: x => x.student_experience_id,
                         principalTable: "student_experience",
                         principalColumn: "student_experience_id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_student_student_experience_StudentExperienceId1",
-                        column: x => x.StudentExperienceId1,
-                        principalTable: "student_experience",
-                        principalColumn: "student_experience_id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -408,13 +387,13 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_general_information", x => new { x.topic_id, x.programming_study_id });
                     table.ForeignKey(
-                        name: "FK_programming_study_id",
+                        name: "FK_general_information_programming_study_programming_study_id",
                         column: x => x.programming_study_id,
                         principalTable: "programming_study",
                         principalColumn: "programming_study_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_topic_id",
+                        name: "FK_general_information_topic_topic_id",
                         column: x => x.topic_id,
                         principalTable: "topic",
                         principalColumn: "topic_id",
@@ -437,7 +416,7 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_section", x => x.section_id);
                     table.ForeignKey(
-                        name: "FK_programming_study_id",
+                        name: "FK_section_programming_study_programming_study_id",
                         column: x => x.programming_study_id,
                         principalTable: "programming_study",
                         principalColumn: "programming_study_id",
@@ -458,13 +437,13 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_inscription", x => x.inscription_id);
                     table.ForeignKey(
-                        name: "FK_programming_study_id",
+                        name: "FK_inscription_programming_study_programming_study_id",
                         column: x => x.programming_study_id,
                         principalTable: "programming_study",
                         principalColumn: "programming_study_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_student_id",
+                        name: "FK_inscription_student_student_id",
                         column: x => x.student_id,
                         principalTable: "student",
                         principalColumn: "student_id",
@@ -487,13 +466,13 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_notification", x => x.notification_id);
                     table.ForeignKey(
-                        name: "FK_student_id",
+                        name: "FK_notification_student_student_id",
                         column: x => x.student_id,
                         principalTable: "student",
                         principalColumn: "student_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_teacher_id",
+                        name: "FK_notification_teacher_teacher_id",
                         column: x => x.teacher_id,
                         principalTable: "teacher",
                         principalColumn: "teacher_id",
@@ -516,13 +495,13 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_registration", x => x.registration_id);
                     table.ForeignKey(
-                        name: "FK_student_id",
+                        name: "FK_registration_student_student_id",
                         column: x => x.student_id,
                         principalTable: "student",
                         principalColumn: "student_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_teacher_id",
+                        name: "FK_registration_teacher_teacher_id",
                         column: x => x.teacher_id,
                         principalTable: "teacher",
                         principalColumn: "teacher_id",
@@ -536,26 +515,19 @@ namespace BitCollegeWeb.Data.Migrations
                     schedule_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     type_programming_class_id = table.Column<int>(type: "int", nullable: false),
-                    student_id = table.Column<int>(type: "int", nullable: false),
-                    TypeProgrammingClassId1 = table.Column<int>(type: "int", nullable: true)
+                    student_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_schedule", x => x.schedule_id);
                     table.ForeignKey(
-                        name: "FK_schedule_type_programming_class_TypeProgrammingClassId1",
-                        column: x => x.TypeProgrammingClassId1,
-                        principalTable: "type_programming_class",
-                        principalColumn: "type_programming_class_id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_student_id",
+                        name: "FK_schedule_student_student_id",
                         column: x => x.student_id,
                         principalTable: "student",
                         principalColumn: "student_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_type_programming_class_id",
+                        name: "FK_schedule_type_programming_class_type_programming_class_id",
                         column: x => x.type_programming_class_id,
                         principalTable: "type_programming_class",
                         principalColumn: "type_programming_class_id",
@@ -577,7 +549,7 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_announcement", x => x.announcement_id);
                     table.ForeignKey(
-                        name: "FK_section_id",
+                        name: "FK_announcement_section_section_id",
                         column: x => x.section_id,
                         principalTable: "section",
                         principalColumn: "section_id",
@@ -604,13 +576,13 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_assignment", x => x.assignment_id);
                     table.ForeignKey(
-                        name: "FK_calification_assignment_id",
+                        name: "FK_assignment_calification_assignment_calification_assignment_id",
                         column: x => x.calification_assignment_id,
                         principalTable: "calification_assignment",
                         principalColumn: "calification_assignment_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_section_id",
+                        name: "FK_assignment_section_section_id",
                         column: x => x.section_id,
                         principalTable: "section",
                         principalColumn: "section_id",
@@ -626,26 +598,19 @@ namespace BitCollegeWeb.Data.Migrations
                     date_start = table.Column<DateTime>(type: "datetime2", nullable: false),
                     name = table.Column<string>(type: "varchar(128)", unicode: false, maxLength: 128, nullable: false),
                     section_id = table.Column<int>(type: "int", nullable: false),
-                    teacher_forum_id = table.Column<int>(type: "int", nullable: false),
-                    TeacherForumId1 = table.Column<int>(type: "int", nullable: true)
+                    teacher_forum_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_classroom", x => x.classroom_id);
                     table.ForeignKey(
-                        name: "FK_classroom_teacher_forum_TeacherForumId1",
-                        column: x => x.TeacherForumId1,
-                        principalTable: "teacher_forum",
-                        principalColumn: "teacher_forum_id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_section_id",
+                        name: "FK_classroom_section_section_id",
                         column: x => x.section_id,
                         principalTable: "section",
                         principalColumn: "section_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_teacher_forum_id",
+                        name: "FK_classroom_teacher_forum_teacher_forum_id",
                         column: x => x.teacher_forum_id,
                         principalTable: "teacher_forum",
                         principalColumn: "teacher_forum_id",
@@ -672,13 +637,13 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_exam", x => x.exam_id);
                     table.ForeignKey(
-                        name: "FK_calification_exam_id",
+                        name: "FK_exam_calification_exam_calification_exam_id",
                         column: x => x.calification_exam_id,
                         principalTable: "calification_exam",
                         principalColumn: "calification_exam_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_section_id",
+                        name: "FK_exam_section_section_id",
                         column: x => x.section_id,
                         principalTable: "section",
                         principalColumn: "section_id",
@@ -696,13 +661,13 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_section_type_section", x => new { x.section_id, x.type_section_id });
                     table.ForeignKey(
-                        name: "FK_section_id",
+                        name: "FK_section_type_section_section_section_id",
                         column: x => x.section_id,
                         principalTable: "section",
                         principalColumn: "section_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_type_section_id",
+                        name: "FK_section_type_section_type_section_type_section_id",
                         column: x => x.type_section_id,
                         principalTable: "type_section",
                         principalColumn: "type_section_id",
@@ -720,13 +685,13 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_student_section", x => new { x.student_id, x.section_id });
                     table.ForeignKey(
-                        name: "FK_section_id",
+                        name: "FK_student_section_section_section_id",
                         column: x => x.section_id,
                         principalTable: "section",
                         principalColumn: "section_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_student_id",
+                        name: "FK_student_section_student_student_id",
                         column: x => x.student_id,
                         principalTable: "student",
                         principalColumn: "student_id",
@@ -744,13 +709,13 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_teacher_section", x => new { x.teacher_id, x.section_id });
                     table.ForeignKey(
-                        name: "FK_section_id",
+                        name: "FK_teacher_section_section_section_id",
                         column: x => x.section_id,
                         principalTable: "section",
                         principalColumn: "section_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_teacher_id",
+                        name: "FK_teacher_section_teacher_teacher_id",
                         column: x => x.teacher_id,
                         principalTable: "teacher",
                         principalColumn: "teacher_id",
@@ -770,13 +735,13 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_schedule_day", x => new { x.schedule_id, x.day_id });
                     table.ForeignKey(
-                        name: "FK_day_id",
+                        name: "FK_schedule_day_day_day_id",
                         column: x => x.day_id,
                         principalTable: "day",
                         principalColumn: "day_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_schedule_id",
+                        name: "FK_schedule_day_schedule_schedule_id",
                         column: x => x.schedule_id,
                         principalTable: "schedule",
                         principalColumn: "schedule_id",
@@ -797,13 +762,13 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_chat", x => x.chat_id);
                     table.ForeignKey(
-                        name: "FK_classroom_id",
+                        name: "FK_chat_classroom_classroom_id",
                         column: x => x.classroom_id,
                         principalTable: "classroom",
                         principalColumn: "classroom_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_teacher_id",
+                        name: "FK_chat_teacher_teacher_id",
                         column: x => x.teacher_id,
                         principalTable: "teacher",
                         principalColumn: "teacher_id",
@@ -821,13 +786,13 @@ namespace BitCollegeWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_classroom_external_tool", x => new { x.external_tool_id, x.classroom_id });
                     table.ForeignKey(
-                        name: "FK_classroom_id",
+                        name: "FK_classroom_external_tool_classroom_classroom_id",
                         column: x => x.classroom_id,
                         principalTable: "classroom",
                         principalColumn: "classroom_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_external_tool_id",
+                        name: "FK_classroom_external_tool_external_tool_external_tool_id",
                         column: x => x.external_tool_id,
                         principalTable: "external_tool",
                         principalColumn: "external_tool_id",
@@ -872,14 +837,8 @@ namespace BitCollegeWeb.Data.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_classroom_teacher_forum_id",
                 table: "classroom",
-                column: "teacher_forum_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_classroom_TeacherForumId1",
-                table: "classroom",
-                column: "TeacherForumId1",
-                unique: true,
-                filter: "[TeacherForumId1] IS NOT NULL");
+                column: "teacher_forum_id",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_classroom_external_tool_classroom_id",
@@ -929,14 +888,8 @@ namespace BitCollegeWeb.Data.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_programming_study_calification_system_id",
                 table: "programming_study",
-                column: "calification_system_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_programming_study_CalificationSystemId1",
-                table: "programming_study",
-                column: "CalificationSystemId1",
-                unique: true,
-                filter: "[CalificationSystemId1] IS NOT NULL");
+                column: "calification_system_id",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_programming_study_type_programming_class_id",
@@ -966,14 +919,8 @@ namespace BitCollegeWeb.Data.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_schedule_type_programming_class_id",
                 table: "schedule",
-                column: "type_programming_class_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_schedule_TypeProgrammingClassId1",
-                table: "schedule",
-                column: "TypeProgrammingClassId1",
-                unique: true,
-                filter: "[TypeProgrammingClassId1] IS NOT NULL");
+                column: "type_programming_class_id",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_schedule_day_day_id",
@@ -983,7 +930,8 @@ namespace BitCollegeWeb.Data.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_section_programming_study_id",
                 table: "section",
-                column: "programming_study_id");
+                column: "programming_study_id",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_section_type_section_type_section_id",
@@ -993,14 +941,8 @@ namespace BitCollegeWeb.Data.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_student_student_experience_id",
                 table: "student",
-                column: "student_experience_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_student_StudentExperienceId1",
-                table: "student",
-                column: "StudentExperienceId1",
-                unique: true,
-                filter: "[StudentExperienceId1] IS NOT NULL");
+                column: "student_experience_id",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_student_experience_institution_id",
@@ -1015,14 +957,8 @@ namespace BitCollegeWeb.Data.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_teacher_teacher_experience_id",
                 table: "teacher",
-                column: "teacher_experience_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_teacher_TeacherExperienceId1",
-                table: "teacher",
-                column: "TeacherExperienceId1",
-                unique: true,
-                filter: "[TeacherExperienceId1] IS NOT NULL");
+                column: "teacher_experience_id",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_teacher_experience_company_id",
@@ -1126,10 +1062,10 @@ namespace BitCollegeWeb.Data.Migrations
                 name: "topic");
 
             migrationBuilder.DropTable(
-                name: "teacher_forum");
+                name: "section");
 
             migrationBuilder.DropTable(
-                name: "section");
+                name: "teacher_forum");
 
             migrationBuilder.DropTable(
                 name: "student");

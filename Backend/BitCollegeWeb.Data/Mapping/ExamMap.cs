@@ -60,13 +60,11 @@ namespace BitCollegeWeb.Data.Mapping
 
             builder.HasOne(e => e.CalificationExam)
                 .WithMany(ce => ce.Exams)
-                .HasForeignKey(e => e.CalificationExamId)
-                .HasConstraintName("FK_calification_exam_id");
+                .HasForeignKey(e => e.CalificationExamId);
 
             builder.HasOne(e => e.Section)
                 .WithMany(es => es.Exams)
-                .HasForeignKey(e => e.SectionId)
-                .HasConstraintName("FK_section_id");
+                .HasForeignKey(e => e.SectionId);
 
         }
     }

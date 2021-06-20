@@ -37,18 +37,15 @@ namespace BitCollegeWeb.Data.Mapping
 
             builder.HasOne(ps => ps.TypeStudy)
                 .WithMany(ts => ts.ProgrammingStudies)
-                .HasForeignKey(ps => ps.TypeStudyId)
-                .HasConstraintName("FK_type_study_id");
-
-            builder.HasOne(ps => ps.CalificationSystem)
-                .WithMany()
-                .HasForeignKey(ps => ps.CalificationSystemId)
-                .HasConstraintName("FK_calification_system_id");
+                .HasForeignKey(ps => ps.TypeStudyId);
 
             builder.HasOne(ps => ps.TypeProgrammingClass)
                 .WithMany(tpc => tpc.ProgrammingStudies)
-                .HasForeignKey(ps => ps.TypeProgrammingClassId)
-                .HasConstraintName("FK_type_programming_class_id");
+                .HasForeignKey(ps => ps.TypeProgrammingClassId);
+
+            builder.HasOne(ps => ps.Section)
+                .WithOne(s => s.ProgrammingStudy)
+                .HasForeignKey<Section>(s => s.ProgrammingStudyId);
 
         }
     }

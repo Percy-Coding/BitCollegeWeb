@@ -40,11 +40,6 @@ namespace BitCollegeWeb.Data.Mapping
                 .HasColumnName("vacancies")
                 .HasDefaultValueSql("((1))");
 
-            builder.HasOne(s => s.ProgrammingStudy)
-                .WithMany()
-                .HasForeignKey(s => s.ProgrammingStudyId)
-                .HasConstraintName("FK_programming_study_id");
-
         }
     }
 }

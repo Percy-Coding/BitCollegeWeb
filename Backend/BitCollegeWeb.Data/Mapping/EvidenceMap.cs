@@ -31,8 +31,7 @@ namespace BitCollegeWeb.Data.Mapping
 
             builder.HasOne(e => e.TeacherForum)
                 .WithMany(etf => etf.Evidences)
-                .HasForeignKey(e => e.TeacherForumId)
-                .HasConstraintName("FK_teacher_forum_id");
+                .HasForeignKey(e => e.TeacherForumId);
         }
     }
 }

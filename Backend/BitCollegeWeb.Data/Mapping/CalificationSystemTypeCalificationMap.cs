@@ -24,13 +24,11 @@ namespace BitCollegeWeb.Data.Mapping
 
             builder.HasOne(cst => cst.CalificationSystem)
                 .WithMany(cs => cs.CalificationSystemTypeCalifications)
-                .HasForeignKey(cst => cst.CalificationSystemId)
-                .HasConstraintName("FK_calification_system_id");
+                .HasForeignKey(cst => cst.CalificationSystemId);
 
             builder.HasOne(cst => cst.TypeCalification)
                 .WithMany(tc => tc.CalificationSystemTypeCalifications)
-                .HasForeignKey(cst => cst.TypeCalificationId)
-                .HasConstraintName("FK_type_calification_id");
+                .HasForeignKey(cst => cst.TypeCalificationId);
         }
     }
 }

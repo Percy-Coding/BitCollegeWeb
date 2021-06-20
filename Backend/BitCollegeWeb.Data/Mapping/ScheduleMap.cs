@@ -28,15 +28,9 @@ namespace BitCollegeWeb.Data.Mapping
                 .HasColumnName("student_id")
                 .IsRequired();
 
-            builder.HasOne(sch => sch.TypeProgrammingClass)
-                .WithMany()
-                .HasForeignKey(sch => sch.TypeProgrammingClassId)
-                .HasConstraintName("FK_type_programming_class_id");
-
             builder.HasOne(sch => sch.Student)
                 .WithMany(stu => stu.Schedules)
-                .HasForeignKey(sch => sch.StudentId)
-                .HasConstraintName("FK_student_id");
+                .HasForeignKey(sch => sch.StudentId);
         }
     }
 }

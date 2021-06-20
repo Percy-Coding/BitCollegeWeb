@@ -44,13 +44,11 @@ namespace BitCollegeWeb.Data.Mapping
 
             builder.HasOne(r => r.Student)
                 .WithMany(st => st.Registrations)
-                .HasForeignKey(r => r.StudentId)
-                .HasConstraintName("FK_student_id");
+                .HasForeignKey(r => r.StudentId);
 
             builder.HasOne(r => r.Teacher)
                 .WithMany(t => t.Registrations)
-                .HasForeignKey(r => r.TeacherId)
-                .HasConstraintName("FK_teacher_id");
+                .HasForeignKey(r => r.TeacherId);
         }
     }
 }

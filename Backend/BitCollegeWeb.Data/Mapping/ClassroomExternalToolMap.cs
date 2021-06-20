@@ -24,13 +24,11 @@ namespace BitCollegeWeb.Data.Mapping
 
             builder.HasOne(cet => cet.ExternalTool)
                 .WithMany(et => et.ClassroomExternalTools)
-                .HasForeignKey(cet => cet.ExternalToolId)
-                .HasConstraintName("FK_external_tool_id");
+                .HasForeignKey(cet => cet.ExternalToolId);
 
             builder.HasOne(cet => cet.Classroom)
                 .WithMany(c => c.ClassroomExternalTools)
-                .HasForeignKey(cet => cet.ClassroomId)
-                .HasConstraintName("FK_classroom_id");
+                .HasForeignKey(cet => cet.ClassroomId);
         }
     }
 }

@@ -46,8 +46,7 @@ namespace BitCollegeWeb.Data.Mapping
             //FK
             builder.HasOne(a => a.Section)
                 .WithMany(a => a.Announcements)
-                .HasForeignKey(a => a.SectionId)
-                .HasConstraintName("FK_section_id");
+                .HasForeignKey(a => a.SectionId);
 
         }
     }

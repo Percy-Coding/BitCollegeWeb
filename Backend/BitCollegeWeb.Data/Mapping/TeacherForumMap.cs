@@ -30,6 +30,10 @@ namespace BitCollegeWeb.Data.Mapping
                 .HasColumnName("date")
                 .IsRequired();
 
+            builder.HasOne(tf => tf.Classroom)
+                .WithOne(cl => cl.TeacherForum)
+                .HasForeignKey<Classroom>(cl => cl.TeacherForumId);
+
         }
     }
 }

@@ -22,11 +22,6 @@ namespace BitCollegeWeb.Data.Mapping
 
             builder.Property(st => st.StudentExperienceId)
                 .HasColumnName("student_experience_id");
-
-            builder.HasOne(st => st.StudentExperience)
-                .WithMany()
-                .HasForeignKey(st => st.StudentExperienceId)
-                .HasConstraintName("FK_student_experience_id");
         }
     }
 }
