@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BitCollegeWeb.Entities\BitCollegeWeb.Entities.csproj" />
+    <ProjectReference Include="..\BitCollegeWeb.Entities\BitCollegeWeb.Domain.csproj" />
   </ItemGroup>
 
 </Project>

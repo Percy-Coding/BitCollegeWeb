@@ -33,8 +33,8 @@
     ".NETCoreApp,Version=v5.0": {
       "BitCollegeWeb/1.0.0": {
         "dependencies": {
-          "BitCollegeWeb.Data": "1.0.0",
-          "BitCollegeWeb.Entities": "1.0.0",
+          "BitCollegeWeb.Domain": "1.0.0",
+          "BitCollegeWeb.Infrastructure": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.6",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
@@ -1874,24 +1874,24 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
-      "BitCollegeWeb.Data/1.0.0": {
+      "BitCollegeWeb.Domain/1.0.0": {
+        "runtime": {
+          "BitCollegeWeb.Domain.dll": {}
+        },
+        "compile": {
+          "BitCollegeWeb.Domain.dll": {}
+        }
+      },
+      "BitCollegeWeb.Infrastructure/1.0.0": {
         "dependencies": {
-          "BitCollegeWeb.Entities": "1.0.0",
+          "BitCollegeWeb.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6"
         },
         "runtime": {
-          "BitCollegeWeb.Data.dll": {}
+          "BitCollegeWeb.Infrastructure.dll": {}
         },
         "compile": {
-          "BitCollegeWeb.Data.dll": {}
-        }
-      },
-      "BitCollegeWeb.Entities/1.0.0": {
-        "runtime": {
-          "BitCollegeWeb.Entities.dll": {}
-        },
-        "compile": {
-          "BitCollegeWeb.Entities.dll": {}
+          "BitCollegeWeb.Infrastructure.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -4498,12 +4498,12 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
-    "BitCollegeWeb.Data/1.0.0": {
+    "BitCollegeWeb.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "BitCollegeWeb.Entities/1.0.0": {
+    "BitCollegeWeb.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

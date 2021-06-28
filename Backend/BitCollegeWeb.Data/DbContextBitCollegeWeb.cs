@@ -1,5 +1,5 @@
-﻿using BitCollegeWeb.Data.Mapping;
-using BitCollegeWeb.Entities;
+﻿using BitCollegeWeb.Infrastructure.Mapping;
+using BitCollegeWeb.Domain;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BitCollegeWeb.Data
+namespace BitCollegeWeb.Infrastructure
 {
     public class DbContextBitCollegeWeb : DbContext
     {

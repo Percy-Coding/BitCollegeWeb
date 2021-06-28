@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj",
-      "projectName": "BitCollegeWeb.Entities",
-      "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj",
+      "projectUniqueName": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj",
+      "projectName": "BitCollegeWeb.Domain",
+      "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj",
       "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\obj\\",
       "projectStyle": "PackageReference",

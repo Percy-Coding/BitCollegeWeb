@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace BitCollegeWeb.Data.Migrations
+namespace BitCollegeWeb.Infrastructure.Migrations
 {
     public partial class FixMappingsBCW : Migration
     {

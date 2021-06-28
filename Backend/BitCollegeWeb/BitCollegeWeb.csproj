@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BitCollegeWeb.Data\BitCollegeWeb.Data.csproj" />
-    <ProjectReference Include="..\BitCollegeWeb.Entities\BitCollegeWeb.Entities.csproj" />
+    <ProjectReference Include="..\BitCollegeWeb.Data\BitCollegeWeb.Infrastructure.csproj" />
+    <ProjectReference Include="..\BitCollegeWeb.Entities\BitCollegeWeb.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NPqiICBYDELiPaxNXOXfqGD3qeLsUgn8bk2CpnK6G6E9K6/ECzXMRI3Dxg7uRdW9Un0sYmfcLH62yQ7L5lWg1Q==",
+  "dgSpecHash": "Y6XNFR4RoQiDYHJAENqwFJJLdbefdn4s3+o20SP0wcNRKyN033PF8l+Hpddl210BnyRWzU+Qn1BahOtkkkle8g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj",
+  "projectFilePath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USUARIO\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

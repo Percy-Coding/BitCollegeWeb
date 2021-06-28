@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using BitCollegeWeb.Data;
-using BitCollegeWeb.Entities;
+using BitCollegeWeb.Infrastructure;
+using BitCollegeWeb.Domain;
 using BitCollegeWeb.Models.Topic;
 
 namespace BitCollegeWeb.Controllers

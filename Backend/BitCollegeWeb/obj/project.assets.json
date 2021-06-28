@@ -2085,28 +2085,28 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "BitCollegeWeb.Data/1.0.0": {
+      "BitCollegeWeb.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/BitCollegeWeb.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BitCollegeWeb.Domain.dll": {}
+        }
+      },
+      "BitCollegeWeb.Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "BitCollegeWeb.Entities": "1.0.0",
+          "BitCollegeWeb.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.4"
         },
         "compile": {
-          "bin/placeholder/BitCollegeWeb.Data.dll": {}
+          "bin/placeholder/BitCollegeWeb.Infrastructure.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BitCollegeWeb.Data.dll": {}
-        }
-      },
-      "BitCollegeWeb.Entities/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/BitCollegeWeb.Entities.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BitCollegeWeb.Entities.dll": {}
+          "bin/placeholder/BitCollegeWeb.Infrastructure.dll": {}
         }
       }
     }
@@ -7308,21 +7308,21 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "BitCollegeWeb.Data/1.0.0": {
+    "BitCollegeWeb.Domain/1.0.0": {
       "type": "project",
-      "path": "../BitCollegeWeb.Data/BitCollegeWeb.Data.csproj",
-      "msbuildProject": "../BitCollegeWeb.Data/BitCollegeWeb.Data.csproj"
+      "path": "../BitCollegeWeb.Entities/BitCollegeWeb.Domain.csproj",
+      "msbuildProject": "../BitCollegeWeb.Entities/BitCollegeWeb.Domain.csproj"
     },
-    "BitCollegeWeb.Entities/1.0.0": {
+    "BitCollegeWeb.Infrastructure/1.0.0": {
       "type": "project",
-      "path": "../BitCollegeWeb.Entities/BitCollegeWeb.Entities.csproj",
-      "msbuildProject": "../BitCollegeWeb.Entities/BitCollegeWeb.Entities.csproj"
+      "path": "../BitCollegeWeb.Data/BitCollegeWeb.Infrastructure.csproj",
+      "msbuildProject": "../BitCollegeWeb.Data/BitCollegeWeb.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "BitCollegeWeb.Data >= 1.0.0",
-      "BitCollegeWeb.Entities >= 1.0.0",
+      "BitCollegeWeb.Domain >= 1.0.0",
+      "BitCollegeWeb.Infrastructure >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.6",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.6",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
@@ -7356,11 +7356,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj": {
-              "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj"
+            "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Infrastructure.csproj"
             },
-            "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj": {
-              "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj"
+            "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj": {
+              "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj"
             }
           }
         }

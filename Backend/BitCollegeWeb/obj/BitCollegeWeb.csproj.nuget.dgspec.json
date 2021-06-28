@@ -4,12 +4,12 @@
     "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb\\BitCollegeWeb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj": {
+    "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj",
-        "projectName": "BitCollegeWeb.Data",
-        "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj",
+        "projectUniqueName": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Infrastructure.csproj",
+        "projectName": "BitCollegeWeb.Infrastructure",
+        "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\obj\\",
         "projectStyle": "PackageReference",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj": {
-                "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj"
+              "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj": {
+                "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj"
               }
             }
           }
@@ -74,12 +74,12 @@
         }
       }
     },
-    "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj": {
+    "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj",
-        "projectName": "BitCollegeWeb.Entities",
-        "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj",
+        "projectName": "BitCollegeWeb.Domain",
+        "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj",
         "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\obj\\",
         "projectStyle": "PackageReference",
@@ -152,11 +152,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj": {
-                "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj"
+              "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Infrastructure.csproj"
               },
-              "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj": {
-                "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj"
+              "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj": {
+                "projectPath": "C:\\Users\\USUARIO\\Desktop\\BackEnd Junior Web Devs\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj"
               }
             }
           }

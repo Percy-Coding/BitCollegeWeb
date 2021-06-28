@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31229.75
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitCollegeWeb", "BitCollegeWeb\BitCollegeWeb.csproj", "{178E899D-787F-49D2-973E-40DEDA066F25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitCollegeWeb", "BitCollegeWeb\BitCollegeWeb.csproj", "{178E899D-787F-49D2-973E-40DEDA066F25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitCollegeWeb.Entities", "BitCollegeWeb.Entities\BitCollegeWeb.Entities.csproj", "{45D5123F-BEEC-4021-9357-15AB4F10525F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitCollegeWeb.Domain", "BitCollegeWeb.Entities\BitCollegeWeb.Domain.csproj", "{45D5123F-BEEC-4021-9357-15AB4F10525F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitCollegeWeb.Data", "BitCollegeWeb.Data\BitCollegeWeb.Data.csproj", "{AD1597BA-C727-4067-A2BB-5FBFB7BC850F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitCollegeWeb.Infrastructure", "BitCollegeWeb.Data\BitCollegeWeb.Infrastructure.csproj", "{AD1597BA-C727-4067-A2BB-5FBFB7BC850F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
