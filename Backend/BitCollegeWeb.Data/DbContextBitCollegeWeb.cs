@@ -53,6 +53,7 @@ namespace BitCollegeWeb.Data
         public DbSet<TypeStudy> TypeStudies  { get; set; }
         public DbSet<URL> Urls  { get; set; }
 
+        //patron de diseño Builder aplicado en cada entidad mediante los mappings
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

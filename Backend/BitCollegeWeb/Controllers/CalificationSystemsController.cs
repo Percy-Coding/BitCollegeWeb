@@ -15,6 +15,8 @@ namespace BitCollegeWeb.Controllers
     [ApiController]
     public class CalificationSystemsController : ControllerBase
     {
+        //patron de diseño singleton aplicado a nuestro context donde me ayuda a realizar cada metodo planteado
+
         private readonly DbContextBitCollegeWeb _context;
 
         public CalificationSystemsController(DbContextBitCollegeWeb context)
