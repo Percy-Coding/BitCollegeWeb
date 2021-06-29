@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BitCollegeWeb.Infrastructure.Migrations
 {
-    public partial class FixMappingsBCW : Migration
+    public partial class FixedBCWv1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -41,7 +41,7 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                 {
                     calification_system_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    number_percentage = table.Column<int>(type: "int", nullable: false)
+                    calification_system_code = table.Column<string>(type: "varchar(8)", unicode: false, maxLength: 8, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -277,7 +277,8 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                 columns: table => new
                 {
                     type_calification_id = table.Column<int>(type: "int", nullable: false),
-                    calification_system_id = table.Column<int>(type: "int", nullable: false)
+                    calification_system_id = table.Column<int>(type: "int", nullable: false),
+                    number_percentage = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

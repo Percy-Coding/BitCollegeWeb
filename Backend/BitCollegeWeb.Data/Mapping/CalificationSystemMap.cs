@@ -20,9 +20,11 @@ namespace BitCollegeWeb.Infrastructure.Mapping
                 .HasColumnName("calification_system_id")
                 .ValueGeneratedOnAdd();
 
-            //number_percentage
-            builder.Property(cs => cs.NumberPercentage)
-                .HasColumnName("number_percentage")
+            //calification_system_code
+            builder.Property(cs => cs.CalificationSystemCode)
+                .HasColumnName("calification_system_code")
+                .HasMaxLength(8)
+                .IsUnicode(false)
                 .IsRequired();
 
             //relation 1 to 1  to ProgrammingStudy

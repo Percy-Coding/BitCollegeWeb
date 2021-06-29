@@ -176,9 +176,12 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                         .HasColumnName("calification_system_id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("NumberPercentage")
-                        .HasColumnType("int")
-                        .HasColumnName("number_percentage");
+                    b.Property<string>("CalificationSystemCode")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(8)")
+                        .HasColumnName("calification_system_code");
 
                     b.HasKey("CalificationSystemId");
 
@@ -194,6 +197,10 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                     b.Property<int>("TypeCalificationId")
                         .HasColumnType("int")
                         .HasColumnName("type_calification_id");
+
+                    b.Property<int>("NumberPercentage")
+                        .HasColumnType("int")
+                        .HasColumnName("number_percentage");
 
                     b.HasKey("CalificationSystemId", "TypeCalificationId");
 

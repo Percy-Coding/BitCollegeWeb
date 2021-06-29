@@ -7,6 +7,6 @@ namespace BitCollegeWeb.Models.CalificationSystem
 {
     public class CreateCalificationSystemModel
     {
-        public int NumberPercentage { get; set; }
+        public string CalificationSystemCode { get; set; }
     }
 }

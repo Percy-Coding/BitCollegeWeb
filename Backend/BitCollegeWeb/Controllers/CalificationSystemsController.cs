@@ -33,7 +33,7 @@ namespace BitCollegeWeb.Controllers
             return CalificationSystemList.Select(d => new CalificationSystemModel
             {
                 CalificationSystemId = d.CalificationSystemId,
-                NumberPercentage = d.NumberPercentage,
+                CalificationSystemCode = d.CalificationSystemCode,
 
             });
         }
@@ -50,41 +50,41 @@ namespace BitCollegeWeb.Controllers
             return Ok(new CalificationSystemModel
             {
                 CalificationSystemId = CalificatioSystem.CalificationSystemId,
-                NumberPercentage = CalificatioSystem.NumberPercentage,
+                CalificationSystemCode = CalificatioSystem.CalificationSystemCode,
             });
         }
 
         // PUT: api/CalificationSystems/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCalificationSystem(int id, [FromBody] UpdateCalificationSystemModel model)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutCalificationSystem(int id, [FromBody] UpdateCalificationSystemModel model)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return BadRequest(ModelState);
 
-            if (id <= 0)
-                return BadRequest();
+        //    if (id <= 0)
+        //        return BadRequest();
 
-            var CalificationSystem = await _context.CalificationSystems.FirstOrDefaultAsync(d => d.CalificationSystemId == id);
+        //    var CalificationSystem = await _context.CalificationSystems.FirstOrDefaultAsync(d => d.CalificationSystemId == id);
 
-            if (CalificationSystem == null)
-                return NotFound();
+        //    if (CalificationSystem == null)
+        //        return NotFound();
 
 
 
-            CalificationSystem.NumberPercentage = model.NumberPercentage;
+        //    CalificationSystem.CalificationSystemCode = model.CalificationSystemCode;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException ex)
-            {
-                return BadRequest(ex.Message);
-            }
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
 
-            return Ok(model);
-        }
+        //    return Ok(model);
+        //}
 
         // POST: api/CalificationSystems
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
@@ -96,7 +96,7 @@ namespace BitCollegeWeb.Controllers
 
             CalificationSystem calificationSystem = new CalificationSystem
             {
-                NumberPercentage = model.NumberPercentage
+                CalificationSystemCode = model.CalificationSystemCode
             };
             _context.CalificationSystems.Add(calificationSystem);
             try

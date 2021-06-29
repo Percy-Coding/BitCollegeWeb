@@ -10,6 +10,7 @@ namespace BitCollegeWeb.Domain
     {
         public int TypeCalificationId { get; set; }
         public int CalificationSystemId { get; set; }
+        public int NumberPercentage { get; set; }
         public virtual TypeCalification TypeCalification { get; set; }
         public virtual CalificationSystem CalificationSystem { get; set; }
     }

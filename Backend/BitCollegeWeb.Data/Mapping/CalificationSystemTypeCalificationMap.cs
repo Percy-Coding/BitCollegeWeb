@@ -22,6 +22,10 @@ namespace BitCollegeWeb.Infrastructure.Mapping
             builder.Property(cst => cst.TypeCalificationId)
                 .HasColumnName("type_calification_id");
 
+            builder.Property(cst => cst.NumberPercentage)
+                .HasColumnName("number_percentage")
+                .IsRequired();
+
             builder.HasOne(cst => cst.CalificationSystem)
                 .WithMany(cs => cs.CalificationSystemTypeCalifications)
                 .HasForeignKey(cst => cst.CalificationSystemId);

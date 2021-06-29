@@ -9,7 +9,7 @@ namespace BitCollegeWeb.Domain
     public class CalificationSystem
     {
         public int CalificationSystemId { get; set; }
-        public int NumberPercentage { get; set; }
+        public string CalificationSystemCode { get; set; }
         public virtual ProgrammingStudy ProgrammingStudy { get; set; }
         public virtual ICollection<CalificationSystemTypeCalification> CalificationSystemTypeCalifications { get; set; }
 
