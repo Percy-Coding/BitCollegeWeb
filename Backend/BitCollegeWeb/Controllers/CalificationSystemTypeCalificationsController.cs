@@ -22,13 +22,6 @@ namespace BitCollegeWeb.Controllers
             _context = context;
         }
 
-        // GET: api/CalificationSystemTypeCalifications
-        //[HttpGet]
-        //public async Task<ActionResult<IEnumerable<CalificationSystemTypeCalification>>> GetCalificationSystemTypes()
-        //{
-        //    return await _context.CalificationSystemTypes.ToListAsync();
-        //}
-
         // GET: api/CalificationSystemTypeCalifications/5
         [HttpGet("{CalificationSystemId}/TypeCalifications")]
         public async Task<IEnumerable<TypeCalificationModel>> GetTypeCalificationByCalificationSystemId(int CalificationSystemId)
@@ -50,76 +43,67 @@ namespace BitCollegeWeb.Controllers
             });
         }
 
-        // PUT: api/CalificationSystemTypeCalifications/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCalificationSystemTypeCalification(int id, CalificationSystemTypeCalification calificationSystemTypeCalification)
+        [HttpPatch("{CalificationSystemId}/TypeCalifications/{TypeCalificationId}")]
+        public async Task<IActionResult> AssignTypeCalification(int CalificationSystemId, int TypeCalificationId)
         {
-            if (id != calificationSystemTypeCalification.CalificationSystemId)
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            CalificationSystem calificationsystem = await _context.CalificationSystems.FindAsync(CalificationSystemId);
+            TypeCalification typecalification = await _context.TypeCalifications.FindAsync(TypeCalificationId);
+
+            if (calificationsystem == null)
+                return NotFound();
+
+            if (typecalification == null)
+                return NotFound();
+
+            CalificationSystemTypeCalification newAssign = new CalificationSystemTypeCalification
             {
-                return BadRequest();
-            }
+                CalificationSystemId = CalificationSystemId,
+                TypeCalificationId = TypeCalificationId,
+            };
 
-            _context.Entry(calificationSystemTypeCalification).State = EntityState.Modified;
-
+            await _context.CalificationSystemTypes.AddAsync(newAssign);
             try
             {
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception ex)
             {
-                if (!CalificationSystemTypeCalificationExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+
+                return BadRequest(ex.Message);
             }
 
-            return NoContent();
-        }
-
-        // POST: api/CalificationSystemTypeCalifications
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<CalificationSystemTypeCalification>> PostCalificationSystemTypeCalification(CalificationSystemTypeCalification calificationSystemTypeCalification)
-        {
-            _context.CalificationSystemTypes.Add(calificationSystemTypeCalification);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (CalificationSystemTypeCalificationExists(calificationSystemTypeCalification.CalificationSystemId))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return CreatedAtAction("GetCalificationSystemTypeCalification", new { id = calificationSystemTypeCalification.CalificationSystemId }, calificationSystemTypeCalification);
+            return Ok();
         }
 
         // DELETE: api/CalificationSystemTypeCalifications/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCalificationSystemTypeCalification(int id)
+        [HttpDelete("{CalificationSystemId}/TypeCalifications/{TypeCalificationId}")]
+        public async Task<IActionResult> UnAssignTypeCalification(int CalificationSystemId,int TypeCalificationId)
         {
-            var calificationSystemTypeCalification = await _context.CalificationSystemTypes.FindAsync(id);
-            if (calificationSystemTypeCalification == null)
-            {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            CalificationSystemTypeCalification calificationsystemtypecalification = await _context.CalificationSystemTypes
+                .Where(x => x.CalificationSystemId.Equals(CalificationSystemId))
+                .Where(y => y.TypeCalificationId.Equals(TypeCalificationId))
+                .FirstOrDefaultAsync();
+
+            if (calificationsystemtypecalification == null)
                 return NotFound();
+
+            try
+            {
+                _context.Remove(calificationsystemtypecalification);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
 
-            _context.CalificationSystemTypes.Remove(calificationSystemTypeCalification);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
+            return Ok();
         }
 
         private bool CalificationSystemTypeCalificationExists(int id)
