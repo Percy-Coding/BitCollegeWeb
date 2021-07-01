@@ -2,7 +2,6 @@ C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitColleg
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb.Entities\bin\Debug\net5.0\BitCollegeWeb.Entities.dll
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb.Entities\bin\Debug\net5.0\ref\BitCollegeWeb.Entities.dll
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb.Entities\bin\Debug\net5.0\BitCollegeWeb.Entities.pdb
-C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb.Entities\obj\Debug\net5.0\BitCollegeWeb.Entities.csprojAssemblyReference.cache
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb.Entities\obj\Debug\net5.0\BitCollegeWeb.Entities.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb.Entities\obj\Debug\net5.0\BitCollegeWeb.Entities.AssemblyInfoInputs.cache
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb.Entities\obj\Debug\net5.0\BitCollegeWeb.Entities.AssemblyInfo.cs

@@ -1,4 +1,4 @@
-﻿using BitCollegeWeb.Entities;
+﻿using BitCollegeWeb.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BitCollegeWeb.Data.Mapping
+namespace BitCollegeWeb.Infrastructure.Mapping
 {
     public class CalificationSystemMap : IEntityTypeConfiguration<CalificationSystem>
     {
@@ -20,9 +20,11 @@ namespace BitCollegeWeb.Data.Mapping
                 .HasColumnName("calification_system_id")
                 .ValueGeneratedOnAdd();
 
-            //number_percentage
-            builder.Property(cs => cs.NumberPercentage)
-                .HasColumnName("number_percentage")
+            //calification_system_code
+            builder.Property(cs => cs.CalificationSystemCode)
+                .HasColumnName("calification_system_code")
+                .HasMaxLength(8)
+                .IsUnicode(false)
                 .IsRequired();
 
             //relation 1 to 1  to ProgrammingStudy
