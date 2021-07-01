@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BitCollegeWeb.Domain;
 using BitCollegeWeb.Infrastructure;
+using BitCollegeWeb.Models.CalificationExam;
 
 namespace BitCollegeWeb.Controllers
 {
@@ -23,81 +24,110 @@ namespace BitCollegeWeb.Controllers
 
         // GET: api/CalificationExams
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CalificationExam>>> GetCalificationExams()
+        public async Task<IEnumerable<CalificationExamModel>> GetCalificationExams()
         {
-            return await _context.CalificationExams.ToListAsync();
+            var calificationexamlist = await _context.CalificationExams.ToListAsync();
+
+
+            return calificationexamlist.Select(d => new CalificationExamModel
+            {
+                CalificationExamId = d.CalificationExamId,
+                Note = d.Note
+            });
         }
 
         // GET: api/CalificationExams/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<CalificationExam>> GetCalificationExam(int id)
+        public async Task<IActionResult> GetCalificationExamById(int id)
         {
-            var calificationExam = await _context.CalificationExams.FindAsync(id);
+            var calificationexam = await _context.CalificationExams.FindAsync(id);
 
-            if (calificationExam == null)
-            {
+            if (calificationexam == null)
                 return NotFound();
-            }
 
-            return calificationExam;
+            return Ok(new CalificationExamModel
+            {
+                CalificationExamId = calificationexam.CalificationExamId,
+                Note = calificationexam.Note
+            });
         }
 
         // PUT: api/CalificationExams/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCalificationExam(int id, CalificationExam calificationExam)
+        public async Task<IActionResult> PutCalificationExam(int id, [FromBody] UpdateCalificationExamModel model)
         {
-            if (id != calificationExam.CalificationExamId)
-            {
-                return BadRequest();
-            }
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
-            _context.Entry(calificationExam).State = EntityState.Modified;
+            if (id <= 0)
+                return BadRequest();
+
+            var calificationexam = await _context.CalificationExams.FirstOrDefaultAsync(d => d.CalificationExamId == id);
+
+            if (calificationexam == null)
+                return NotFound();
+
+
+
+            calificationexam.Note = model.Note;
 
             try
             {
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException ex)
             {
-                if (!CalificationExamExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return BadRequest(ex.Message);
             }
 
-            return NoContent();
+            return Ok(model);
         }
 
         // POST: api/CalificationExams
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<CalificationExam>> PostCalificationExam(CalificationExam calificationExam)
+        public async Task<IActionResult> PostCalificationExam([FromBody] CreateCalificationExamModel model)
         {
-            _context.CalificationExams.Add(calificationExam);
-            await _context.SaveChangesAsync();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
-            return CreatedAtAction("GetCalificationExam", new { id = calificationExam.CalificationExamId }, calificationExam);
+            CalificationExam calificationexam = new CalificationExam
+            {
+                Note = model.Note
+            };
+            _context.CalificationExams.Add(calificationexam);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return Ok(model);
         }
 
         // DELETE: api/CalificationExams/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCalificationExam(int id)
         {
-            var calificationExam = await _context.CalificationExams.FindAsync(id);
-            if (calificationExam == null)
-            {
+            var existingCalificationExam = await _context.CalificationExams.FindAsync(id);
+            if (existingCalificationExam == null)
                 return NotFound();
+
+            try
+            {
+                _context.Remove(existingCalificationExam);
+                await _context.SaveChangesAsync();
+
             }
-
-            _context.CalificationExams.Remove(calificationExam);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            return Ok(existingCalificationExam);
         }
 
         private bool CalificationExamExists(int id)
