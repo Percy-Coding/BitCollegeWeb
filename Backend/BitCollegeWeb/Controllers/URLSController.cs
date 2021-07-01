@@ -38,46 +38,52 @@ namespace BitCollegeWeb.Controllers
         }
 
         // GET: api/URLS/5
-        [HttpGet("ExternalTool/{ExternalToolId}/URLS/{UrlId}")]
-        public async Task<IActionResult> GetURLSByExternalToolId(int ExternalToolId, int UrlId)
+        [HttpGet("ExternalTool/{ExternalToolId}/URLS")]
+        public async Task<ActionResult<URL>> GetURLSByExternalToolId(int ExternalToolId)
         {
-            ExternalTool externaltool = await _context.ExternalTools.FindAsync(ExternalToolId);
-            URL url = await _context.Urls.FindAsync(UrlId);
+            IEnumerable<URL> urlList = await _context.Urls.ToListAsync();
 
-            if (externaltool == null)
-                return NotFound();
+            var UrlsListByExternalToolId = urlList.ToList().Where(d => d.ExternalToolId == ExternalToolId);
 
-            if (url == null)
-                return NotFound();
-
-            return Ok(new URLModel
+            if (UrlsListByExternalToolId.Count() > 0)
             {
-                UrlId = url.UrlId,
-                UrlLink = url.UrlLink,
-                ExternalToolId = url.ExternalToolId
-            });
+                return Ok(UrlsListByExternalToolId.Select(d => new URLModel
+                {
+                    UrlId = d.UrlId,
+                    UrlLink = d.UrlLink,
+                    ExternalToolId = d.ExternalToolId,
+
+                }));
+            }
+            else
+            {
+                return Ok("No hay url(s) para el ExternalTool.");
+            }
 
         }
 
         // GET: api/URLS/5
-        [HttpGet("Topic/{TopicId}/URLS/{UrlId}")]
-        public async Task<IActionResult> GetURLSByTopicId(int TopicId, int UrlId)
+        [HttpGet("Topic/{TopicId}/URLS")]
+        public async Task<ActionResult<URL>> GetURLSByTopicId(int TopicId)
         {
-            Topic topic = await _context.Topics.FindAsync(TopicId);
-            URL url = await _context.Urls.FindAsync(UrlId);
+            IEnumerable<URL> urlList = await _context.Urls.ToListAsync();
 
-            if (topic == null)
-                return NotFound();
+            var UrlsListByTopicId = urlList.ToList().Where(d => d.TopicId == TopicId);
 
-            if (url == null)
-                return NotFound();
-
-            return Ok(new URLModel
+            if (UrlsListByTopicId.Count() > 0)
             {
-                UrlId = url.UrlId,
-                UrlLink = url.UrlLink,
-                TopicId = url.TopicId
-            });
+                return Ok(UrlsListByTopicId.Select(d => new URLModel
+                {
+                    UrlId = d.UrlId,
+                    UrlLink = d.UrlLink,
+                    TopicId = d.TopicId,
+
+                }));
+            }
+            else
+            {
+                return Ok("No hay url(s) para el Topic.");
+            }
         }
 
         // PUT: api/URLS/5
@@ -113,21 +119,21 @@ namespace BitCollegeWeb.Controllers
 
         // POST: api/URLS
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost("ExternalTool/{ExternalToolId}/Urls")]
-        public async Task<IActionResult> PostURLByExternalToolId(int ExternalToolId, [FromBody] CreateURLModel model)
+        [HttpPost("ExternalTool/{ExternalToolId}/URLS")]
+        public async Task<ActionResult<URL>> PostURLByExternalToolId(int ExternalToolId, [FromBody] CreateURLModel model)
         {
-            var externaltool = await _context.ExternalTools
-                .Where(x => x.ExternalToolId.Equals(ExternalToolId))
-                .ToListAsync();
-
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
+            ExternalTool externaltool = await _context.ExternalTools.FindAsync(ExternalToolId);
+
+            if (externaltool == null)
+                return NotFound();
+
             URL url = new URL
             {
-
-                UrlLink = model.UrlLink
-
+                UrlLink = model.UrlLink,
+                ExternalToolId = ExternalToolId
             };
             _context.Urls.Add(url);
             try
@@ -144,21 +150,21 @@ namespace BitCollegeWeb.Controllers
 
         // POST: api/URLS
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost("Topic/{TopicId}/Urls")]
-        public async Task<IActionResult> PostURLByTopicId(int TopicId, [FromBody] CreateURLModel model)
+        [HttpPost("Topic/{TopicId}/URLS")]
+        public async Task<ActionResult<URL>> PostURLByTopicId(int TopicId, [FromBody] CreateURLModel model)
         {
-            var topic = await _context.Topics
-                .Where(x => x.TopicId.Equals(TopicId))
-                .ToListAsync();
-
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
+            Topic topic = await _context.Topics.FindAsync(TopicId);
+
+            if (topic == null)
+                return NotFound();
+
             URL url = new URL
             {
-
-                UrlLink = model.UrlLink
-
+                UrlLink = model.UrlLink,
+                TopicId = TopicId
             };
             _context.Urls.Add(url);
             try
