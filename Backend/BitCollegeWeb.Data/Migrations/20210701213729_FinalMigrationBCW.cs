@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BitCollegeWeb.Infrastructure.Migrations
 {
-    public partial class FixedBCWv1 : Migration
+    public partial class FinalMigrationBCW : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -252,8 +252,8 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                     url_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     url_link = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: false),
-                    external_tool_id = table.Column<int>(type: "int", nullable: false),
-                    topic_id = table.Column<int>(type: "int", nullable: false)
+                    external_tool_id = table.Column<int>(type: "int", nullable: true),
+                    topic_id = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -263,13 +263,13 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                         column: x => x.external_tool_id,
                         principalTable: "external_tool",
                         principalColumn: "external_tool_id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_url_topic_topic_id",
                         column: x => x.topic_id,
                         principalTable: "topic",
                         principalColumn: "topic_id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -460,8 +460,8 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                     title = table.Column<string>(type: "varchar(128)", unicode: false, maxLength: 128, nullable: false),
                     description = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: false),
                     date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    student_id = table.Column<int>(type: "int", nullable: false),
-                    teacher_id = table.Column<int>(type: "int", nullable: false)
+                    student_id = table.Column<int>(type: "int", nullable: true),
+                    teacher_id = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -471,13 +471,13 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                         column: x => x.student_id,
                         principalTable: "student",
                         principalColumn: "student_id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_notification_teacher_teacher_id",
                         column: x => x.teacher_id,
                         principalTable: "teacher",
                         principalColumn: "teacher_id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -489,8 +489,8 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                     date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     email = table.Column<string>(type: "varchar(128)", unicode: false, maxLength: 128, nullable: false),
                     password = table.Column<string>(type: "varchar(64)", unicode: false, maxLength: 64, nullable: false),
-                    student_id = table.Column<int>(type: "int", nullable: false),
-                    teacher_id = table.Column<int>(type: "int", nullable: false)
+                    student_id = table.Column<int>(type: "int", nullable: true),
+                    teacher_id = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -500,13 +500,13 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                         column: x => x.student_id,
                         principalTable: "student",
                         principalColumn: "student_id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_registration_teacher_teacher_id",
                         column: x => x.teacher_id,
                         principalTable: "teacher",
                         principalColumn: "teacher_id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -756,8 +756,8 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                     chat_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     content = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: false),
-                    classroom_id = table.Column<int>(type: "int", nullable: false),
-                    teacher_id = table.Column<int>(type: "int", nullable: false)
+                    classroom_id = table.Column<int>(type: "int", nullable: true),
+                    teacher_id = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -767,13 +767,13 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                         column: x => x.classroom_id,
                         principalTable: "classroom",
                         principalColumn: "classroom_id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_chat_teacher_teacher_id",
                         column: x => x.teacher_id,
                         principalTable: "teacher",
                         principalColumn: "teacher_id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(

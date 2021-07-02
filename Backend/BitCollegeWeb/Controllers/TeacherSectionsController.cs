@@ -13,36 +13,36 @@ namespace BitCollegeWeb.Controllers
 {
     [Route("api")]
     [ApiController]
-    public class StudentSectionsController : ControllerBase
+    public class TeacherSectionsController : ControllerBase
     {
         private readonly DbContextBitCollegeWeb _context;
 
-        public StudentSectionsController(DbContextBitCollegeWeb context)
+        public TeacherSectionsController(DbContextBitCollegeWeb context)
         {
             _context = context;
         }
 
-        // GET: api/StudentSections
+        // GET: api/TeacherSections
         //[HttpGet]
-        //public async Task<ActionResult<IEnumerable<StudentSection>>> GetStudentSections()
+        //public async Task<ActionResult<IEnumerable<TeacherSection>>> GetTeacherSections()
         //{
-        //    return await _context.StudentSections.ToListAsync();
+        //    return await _context.TeacherSections.ToListAsync();
         //}
 
-        // GET: api/StudentSections/5
-        [HttpGet("Student/{StudentId}/Sections")]
-        public async Task<IEnumerable<SectionModel>> GetSectionsByStudentId(int StudentId)
+        // GET: api/TeacherSections/5
+        [HttpGet("Teacher/{TeacherId}/Sections")]
+        public async Task<IEnumerable<SectionModel>> GetSectionsByTeacherId(int TeacherId)
         {
-            var studentsections = await _context.StudentSections
-               .Include(st => st.Student)
+            var teachersections = await _context.TeacherSections
+               .Include(st => st.Teacher)
                .Include(st => st.Section)
-               .Where(x => x.StudentId.Equals(StudentId))
+               .Where(x => x.TeacherId.Equals(TeacherId))
                .ToListAsync();
 
-            if (studentsections == null)
+            if (teachersections == null)
                 return null;
 
-            return studentsections.Select(x => new SectionModel
+            return teachersections.Select(x => new SectionModel
             {
                 SectionId = x.SectionId,
                 SectionCode = x.Section.SectionCode,
@@ -54,47 +54,48 @@ namespace BitCollegeWeb.Controllers
             });
         }
 
-        //[HttpGet("Section/{SectionId}/Students")]
-        //public async Task<IEnumerable<StudentModel>> GetStudentsBySectionId(int SectionId)
+        //[HttpGet("Section/{SectionId}/Teachers")]
+        //public async Task<IEnumerable<TeacherModel>> GetTeachersBySectionId(int SectionId)
         //{
-        //    var studentsections = await _context.StudentSections
-        //       .Include(st => st.Student)
+        //    var teachersections = await _context.TeacherSections
+        //       .Include(st => st.Teacher)
         //       .Include(st => st.Section)
         //       .Where(x => x.SectionId.Equals(SectionId))
         //       .ToListAsync();
 
-        //    if (studentsections == null)
+        //    if (teachersections == null)
         //        return null;
 
-        //    return studentsections.Select(x => new StudentModel
+        //    return teachersections.Select(x => new TeacherModel
         //    {
-        //        StudentId = x.StudentId,
-        //        StudentExperienceId= x.Student.StudentExperienceId
+        //        TeacherId = x.TeacherId,
+        //        TeacherExperienceId = x.Teacher.TeacherExperienceId
+
         //    });
         //}
 
-        [HttpPatch("Section/{SectionId}/Student/{StudentId}")]
-        public async Task<IActionResult> AssignStudent(int SectionId, int StudentId)
+        [HttpPatch("Section/{SectionId}/Teacher/{TeacherId}")]
+        public async Task<IActionResult> AssignTeacher(int SectionId, int TeacherId)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             Section section = await _context.Sections.FindAsync(SectionId);
-            Student student = await _context.Students.FindAsync(StudentId);
+            Teacher teacher = await _context.Teachers.FindAsync(TeacherId);
 
             if (section == null)
                 return NotFound();
 
-            if (student == null)
+            if (teacher == null)
                 return NotFound();
 
-            StudentSection newAssign = new StudentSection
+            TeacherSection newAssign = new TeacherSection
             {
                 SectionId = SectionId,
-                StudentId = StudentId,
+                TeacherId = TeacherId,
             };
 
-            await _context.StudentSections.AddAsync(newAssign);
+            await _context.TeacherSections.AddAsync(newAssign);
             try
             {
                 await _context.SaveChangesAsync();
@@ -108,24 +109,24 @@ namespace BitCollegeWeb.Controllers
             return Ok();
         }
 
-        // DELETE: api/StudentSections/5
-        [HttpDelete("Section/{SectionId}/Student/{StudentId}")]
-        public async Task<IActionResult> UnAssignStudent(int SectionId, int StudentId)
+        // DELETE: api/TeacherSections/5
+        [HttpDelete("Section/{SectionId}/Teacher/{TeacherId}")]
+        public async Task<IActionResult> UnAssignTeacher(int SectionId,int TeacherId)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            StudentSection studentsection = await _context.StudentSections
+            TeacherSection teachersection = await _context.TeacherSections
                 .Where(x => x.SectionId.Equals(SectionId))
-                .Where(y => y.StudentId.Equals(StudentId))
+                .Where(y => y.TeacherId.Equals(TeacherId))
                 .FirstOrDefaultAsync();
 
-            if (studentsection == null)
+            if (teachersection == null)
                 return NotFound();
 
             try
             {
-                _context.Remove(studentsection);
+                _context.Remove(teachersection);
                 await _context.SaveChangesAsync();
             }
             catch (Exception ex)
@@ -136,9 +137,9 @@ namespace BitCollegeWeb.Controllers
             return Ok();
         }
 
-        private bool StudentSectionExists(int id)
+        private bool TeacherSectionExists(int id)
         {
-            return _context.StudentSections.Any(e => e.StudentId == id);
+            return _context.TeacherSections.Any(e => e.TeacherId == id);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace BitCollegeWeb.Models.Registration
         public DateTime Date { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public int StudentId { get; set; }
-        public int TeacherId { get; set; }
+        public int? StudentId { get; set; }
+        public int? TeacherId { get; set; }
     }
 }
