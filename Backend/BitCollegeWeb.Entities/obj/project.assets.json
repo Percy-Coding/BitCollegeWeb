@@ -16,9 +16,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj",
-      "projectName": "BitCollegeWeb.Entities",
-      "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj",
+      "projectUniqueName": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj",
+      "projectName": "BitCollegeWeb.Domain",
+      "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj",
       "packagesPath": "C:\\Users\\percy\\.nuget\\packages\\",
       "outputPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\obj\\",
       "projectStyle": "PackageReference",
@@ -73,13 +73,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

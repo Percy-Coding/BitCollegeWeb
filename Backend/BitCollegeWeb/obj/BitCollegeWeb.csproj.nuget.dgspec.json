@@ -4,12 +4,12 @@
     "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb\\BitCollegeWeb.csproj": {}
   },
   "projects": {
-    "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj": {
+    "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj",
-        "projectName": "BitCollegeWeb.Data",
-        "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj",
+        "projectUniqueName": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Infrastructure.csproj",
+        "projectName": "BitCollegeWeb.Infrastructure",
+        "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\percy\\.nuget\\packages\\",
         "outputPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\obj\\",
         "projectStyle": "PackageReference",
@@ -35,8 +35,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj": {
-                "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj"
+              "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj": {
+                "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj"
               }
             }
           }
@@ -81,12 +81,12 @@
         }
       }
     },
-    "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj": {
+    "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj",
-        "projectName": "BitCollegeWeb.Entities",
-        "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj",
+        "projectUniqueName": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj",
+        "projectName": "BitCollegeWeb.Domain",
+        "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj",
         "packagesPath": "C:\\Users\\percy\\.nuget\\packages\\",
         "outputPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\obj\\",
         "projectStyle": "PackageReference",
@@ -173,11 +173,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj": {
-                "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj"
+              "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Infrastructure.csproj": {
+                "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Infrastructure.csproj"
               },
-              "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj": {
-                "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj"
+              "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj": {
+                "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj"
               }
             }
           }

@@ -1520,14 +1520,14 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "BitCollegeWeb.Entities/1.0.0": {
+      "BitCollegeWeb.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "compile": {
-          "bin/placeholder/BitCollegeWeb.Entities.dll": {}
+          "bin/placeholder/BitCollegeWeb.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BitCollegeWeb.Entities.dll": {}
+          "bin/placeholder/BitCollegeWeb.Domain.dll": {}
         }
       }
     }
@@ -5760,15 +5760,15 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "BitCollegeWeb.Entities/1.0.0": {
+    "BitCollegeWeb.Domain/1.0.0": {
       "type": "project",
-      "path": "../BitCollegeWeb.Entities/BitCollegeWeb.Entities.csproj",
-      "msbuildProject": "../BitCollegeWeb.Entities/BitCollegeWeb.Entities.csproj"
+      "path": "../BitCollegeWeb.Entities/BitCollegeWeb.Domain.csproj",
+      "msbuildProject": "../BitCollegeWeb.Entities/BitCollegeWeb.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "BitCollegeWeb.Entities >= 1.0.0",
+      "BitCollegeWeb.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.4",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.4"
     ]
@@ -5782,9 +5782,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj",
-      "projectName": "BitCollegeWeb.Data",
-      "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Data.csproj",
+      "projectUniqueName": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Infrastructure.csproj",
+      "projectName": "BitCollegeWeb.Infrastructure",
+      "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\BitCollegeWeb.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\percy\\.nuget\\packages\\",
       "outputPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\obj\\",
       "projectStyle": "PackageReference",
@@ -5810,8 +5810,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj": {
-              "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Entities.csproj"
+            "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj": {
+              "projectPath": "E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Entities\\BitCollegeWeb.Domain.csproj"
             }
           }
         }
@@ -5855,13 +5855,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file E:\\ProyectosPersonales\\BitCollegeWeb\\BitCollegeWeb\\Backend\\BitCollegeWeb.Data\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

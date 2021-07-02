@@ -10,5 +10,6 @@ namespace BitCollegeWeb.Models.Announcement
         public string Title { get; set; }
         public DateTime DateLimit { get; set; }
         public string Description { get; set; }
+        public int SectionId { get; set; }
     }
 }

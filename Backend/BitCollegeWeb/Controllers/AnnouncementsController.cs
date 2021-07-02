@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using BitCollegeWeb.Data;
-using BitCollegeWeb.Entities;
+using BitCollegeWeb.Infrastructure;
+using BitCollegeWeb.Domain;
 using BitCollegeWeb.Models.Announcement;
 
 namespace BitCollegeWeb.Controllers
@@ -35,7 +35,31 @@ namespace BitCollegeWeb.Controllers
                 DateLimit = a.DateLimit,
                 Description = a.Description,
                 SectionId = a.SectionId
-            }); 
+            });
+        }
+
+        [HttpGet("Section/{SectionId}/Announcements")]
+        public async Task<ActionResult<AnnouncementModel>> GetAnnouncementsBySectionId(int SectionId)
+        {
+            IEnumerable<Announcement> announcementList = await _context.Announcements.ToListAsync();
+            var announcementListBySectionId = announcementList.ToList().Where(a => a.SectionId == SectionId);
+
+
+            if(announcementListBySectionId.Count() > 0)
+            {
+                return Ok(announcementListBySectionId.Select(a => new AnnouncementModel
+                {
+                    AnnouncementId = a.AnnouncementId,
+                    Title = a.Title,
+                    DateLimit = a.DateLimit,
+                    Description = a.Description,
+                    SectionId = a.SectionId
+                }));
+            }
+            else
+            {
+                return Ok("No existen anuncios para esta Sección");
+            }
         }
 
         // GET: api/Announcements/5
@@ -62,18 +86,23 @@ namespace BitCollegeWeb.Controllers
 
         // POST: api/Announcements
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult> PostAnnouncement([FromBody] AnnouncementModel model)
+        [HttpPost("Section/{SectionId}/Announcement")]
+        public async Task<ActionResult> PostAnnouncement(int SectionId, [FromBody] CreateAnnouncementModel model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            Announcement announcement = new Announcement 
+            Section section = await _context.Sections.FindAsync(SectionId);
+
+            if (section == null)
+                return NotFound();
+
+            Announcement announcement = new Announcement
             {
                 Title = model.Title,
                 DateLimit = model.DateLimit,
                 Description = model.Description,
-                SectionId = model.SectionId
+                SectionId = SectionId
             };
 
             _context.Announcements.Add(announcement);
