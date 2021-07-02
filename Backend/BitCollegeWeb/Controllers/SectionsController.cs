@@ -63,26 +63,29 @@ namespace BitCollegeWeb.Controllers
 
         // GET: api/Sections/5
         [HttpGet("ProgrammingStudy/{ProgrammingStudyId}/Section")]
-        public async Task<IActionResult> GetSectionByProgrammingStudyId(int ProgrammingStudyid)
+        public async Task<ActionResult<Section>> GetSectionByProgrammingStudyId(int ProgrammingStudyId)
         {
-            ProgrammingStudy programmingstudy = await _context.ProgrammingStudies.FindAsync(ProgrammingStudyid);
+            IEnumerable<Section> sectionList = await _context.Sections.ToListAsync();
 
-            if (programmingstudy == null)
-                return NotFound();
+            var SectionListByProgrammingStudyId = sectionList.ToList().Where(d => d.ProgrammingStudyId == ProgrammingStudyId);
 
-            var section = await _context.Sections
-                .Where(d => d.ProgrammingStudyId == ProgrammingStudyid)
-                .ToListAsync();
-
-            return Ok(section.Select(d => new SectionModel
+            if (SectionListByProgrammingStudyId.Count() > 0)
             {
-                SectionId = d.SectionId,
-                SectionCode = d.SectionCode,
-                ProgrammingStudyId = d.ProgrammingStudyId,
-                NumberRecordings = d.NumberRecordings,
-                NumberStudentsEnroll = d.NumberStudentsEnroll,
-                Vacancies = d.Vacancies
-            }));
+                return Ok(SectionListByProgrammingStudyId.Select(d => new SectionModel
+                {
+                    SectionId = d.SectionId,
+                    SectionCode = d.SectionCode,
+                    ProgrammingStudyId = d.ProgrammingStudyId,
+                    NumberRecordings = d.NumberRecordings,
+                    NumberStudentsEnroll = d.NumberStudentsEnroll,
+                    Vacancies = d.Vacancies
+
+                }));
+            }
+            else
+            {
+                return Ok("No hay section(s) para el ProgrammingStudy.");
+            }
         }
 
         // PUT: api/Sections/5

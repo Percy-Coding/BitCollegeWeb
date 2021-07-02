@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BitCollegeWeb.Infrastructure.Migrations
 {
     [DbContext(typeof(DbContextBitCollegeWeb))]
-    [Migration("20210629025228_FixedBCWv1")]
-    partial class FixedBCWv1
+    [Migration("20210701213729_FinalMigrationBCW")]
+    partial class FinalMigrationBCW
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -219,7 +219,7 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                         .HasColumnName("chat_id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ClassroomId")
+                    b.Property<int?>("ClassroomId")
                         .HasColumnType("int")
                         .HasColumnName("classroom_id");
 
@@ -230,7 +230,7 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                         .HasColumnType("varchar(500)")
                         .HasColumnName("content");
 
-                    b.Property<int>("TeacherId")
+                    b.Property<int?>("TeacherId")
                         .HasColumnType("int")
                         .HasColumnName("teacher_id");
 
@@ -552,11 +552,11 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                         .HasColumnType("varchar(500)")
                         .HasColumnName("description");
 
-                    b.Property<int>("StudentId")
+                    b.Property<int?>("StudentId")
                         .HasColumnType("int")
                         .HasColumnName("student_id");
 
-                    b.Property<int>("TeacherId")
+                    b.Property<int?>("TeacherId")
                         .HasColumnType("int")
                         .HasColumnName("teacher_id");
 
@@ -641,11 +641,11 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                         .HasColumnType("varchar(64)")
                         .HasColumnName("password");
 
-                    b.Property<int>("StudentId")
+                    b.Property<int?>("StudentId")
                         .HasColumnType("int")
                         .HasColumnName("student_id");
 
-                    b.Property<int>("TeacherId")
+                    b.Property<int?>("TeacherId")
                         .HasColumnType("int")
                         .HasColumnName("teacher_id");
 
@@ -1064,11 +1064,11 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                         .HasColumnName("url_id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ExternalToolId")
+                    b.Property<int?>("ExternalToolId")
                         .HasColumnType("int")
                         .HasColumnName("external_tool_id");
 
-                    b.Property<int>("TopicId")
+                    b.Property<int?>("TopicId")
                         .HasColumnType("int")
                         .HasColumnName("topic_id");
 
@@ -1141,15 +1141,11 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                 {
                     b.HasOne("BitCollegeWeb.Domain.Classroom", "Classroom")
                         .WithMany("Chats")
-                        .HasForeignKey("ClassroomId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ClassroomId");
 
                     b.HasOne("BitCollegeWeb.Domain.Teacher", "Teacher")
                         .WithMany("Chats")
-                        .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TeacherId");
 
                     b.Navigation("Classroom");
 
@@ -1266,15 +1262,11 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                 {
                     b.HasOne("BitCollegeWeb.Domain.Student", "Student")
                         .WithMany("Notifications")
-                        .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("StudentId");
 
                     b.HasOne("BitCollegeWeb.Domain.Teacher", "Teacher")
                         .WithMany("Notifications")
-                        .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TeacherId");
 
                     b.Navigation("Student");
 
@@ -1312,15 +1304,11 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                 {
                     b.HasOne("BitCollegeWeb.Domain.Student", "Student")
                         .WithMany("Registrations")
-                        .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("StudentId");
 
                     b.HasOne("BitCollegeWeb.Domain.Teacher", "Teacher")
                         .WithMany("Registrations")
-                        .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TeacherId");
 
                     b.Navigation("Student");
 
@@ -1481,15 +1469,11 @@ namespace BitCollegeWeb.Infrastructure.Migrations
                 {
                     b.HasOne("BitCollegeWeb.Domain.ExternalTool", "ExternalTool")
                         .WithMany("URLS")
-                        .HasForeignKey("ExternalToolId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ExternalToolId");
 
                     b.HasOne("BitCollegeWeb.Domain.Topic", "Topic")
                         .WithMany("URLS")
-                        .HasForeignKey("TopicId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TopicId");
 
                     b.Navigation("ExternalTool");
 

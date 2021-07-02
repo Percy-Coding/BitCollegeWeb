@@ -1,3 +1,4 @@
+C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb\bin\Debug\net5.0\appsettings.json
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb\bin\Debug\net5.0\BitCollegeWeb.exe
@@ -103,7 +104,6 @@ C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitColleg
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
