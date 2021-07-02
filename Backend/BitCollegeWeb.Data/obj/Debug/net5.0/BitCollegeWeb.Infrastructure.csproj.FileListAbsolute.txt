@@ -16,3 +16,21 @@ C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitColleg
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb.Data\obj\Debug\net5.0\ref\BitCollegeWeb.Infrastructure.dll
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb.Data\obj\Debug\net5.0\BitCollegeWeb.Infrastructure.pdb
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb.Data\obj\Debug\net5.0\BitCollegeWeb.Infrastructure.genruntimeconfig.cache
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Data\bin\Debug\net5.0\BitCollegeWeb.Infrastructure.deps.json
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Data\bin\Debug\net5.0\BitCollegeWeb.Infrastructure.runtimeconfig.json
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Data\bin\Debug\net5.0\BitCollegeWeb.Infrastructure.runtimeconfig.dev.json
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Data\bin\Debug\net5.0\BitCollegeWeb.Infrastructure.dll
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Data\bin\Debug\net5.0\ref\BitCollegeWeb.Infrastructure.dll
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Data\bin\Debug\net5.0\BitCollegeWeb.Infrastructure.pdb
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Data\bin\Debug\net5.0\BitCollegeWeb.Domain.dll
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Data\bin\Debug\net5.0\BitCollegeWeb.Domain.pdb
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Data\obj\Debug\net5.0\BitCollegeWeb.Infrastructure.csproj.AssemblyReference.cache
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Data\obj\Debug\net5.0\BitCollegeWeb.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Data\obj\Debug\net5.0\BitCollegeWeb.Infrastructure.AssemblyInfoInputs.cache
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Data\obj\Debug\net5.0\BitCollegeWeb.Infrastructure.AssemblyInfo.cs
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Data\obj\Debug\net5.0\BitCollegeWeb.Infrastructure.csproj.CoreCompileInputs.cache
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Data\obj\Debug\net5.0\BitCollegeWeb.Infrastructure.csproj.CopyComplete
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Data\obj\Debug\net5.0\BitCollegeWeb.Infrastructure.dll
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Data\obj\Debug\net5.0\ref\BitCollegeWeb.Infrastructure.dll
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Data\obj\Debug\net5.0\BitCollegeWeb.Infrastructure.pdb
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Data\obj\Debug\net5.0\BitCollegeWeb.Infrastructure.genruntimeconfig.cache
