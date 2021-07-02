@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using BitCollegeWeb.Domain;
 using BitCollegeWeb.Infrastructure;
 using BitCollegeWeb.Models.Section;
+using BitCollegeWeb.Models.Teacher;
 
 namespace BitCollegeWeb.Controllers
 {
@@ -54,25 +55,25 @@ namespace BitCollegeWeb.Controllers
             });
         }
 
-        //[HttpGet("Section/{SectionId}/Teachers")]
-        //public async Task<IEnumerable<TeacherModel>> GetTeachersBySectionId(int SectionId)
-        //{
-        //    var teachersections = await _context.TeacherSections
-        //       .Include(st => st.Teacher)
-        //       .Include(st => st.Section)
-        //       .Where(x => x.SectionId.Equals(SectionId))
-        //       .ToListAsync();
+        [HttpGet("Section/{SectionId}/Teachers")]
+        public async Task<IEnumerable<TeacherModel>> GetTeachersBySectionId(int SectionId)
+        {
+            var teachersections = await _context.TeacherSections
+               .Include(st => st.Teacher)
+               .Include(st => st.Section)
+               .Where(x => x.SectionId.Equals(SectionId))
+               .ToListAsync();
 
-        //    if (teachersections == null)
-        //        return null;
+            if (teachersections == null)
+                return null;
 
-        //    return teachersections.Select(x => new TeacherModel
-        //    {
-        //        TeacherId = x.TeacherId,
-        //        TeacherExperienceId = x.Teacher.TeacherExperienceId
+            return teachersections.Select(x => new TeacherModel
+            {
+                TeacherId = x.TeacherId,
+                TeacherExperienceId = x.Teacher.TeacherExperienceId
 
-        //    });
-        //}
+            });
+        }
 
         [HttpPatch("Section/{SectionId}/Teacher/{TeacherId}")]
         public async Task<IActionResult> AssignTeacher(int SectionId, int TeacherId)

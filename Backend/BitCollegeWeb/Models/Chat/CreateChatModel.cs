@@ -8,7 +8,7 @@ namespace BitCollegeWeb.Models.Chat
     public class CreateChatModel
     {
         public string Content { get; set; }
-        public int ClassroomId { get; set; }
-        public int TeacherId { get; set; }
+        public int? ClassroomId { get; set; }
+        public int? TeacherId { get; set; }
     }
 }

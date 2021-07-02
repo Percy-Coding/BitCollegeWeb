@@ -23,11 +23,11 @@ namespace BitCollegeWeb.Controllers
         }
 
         // GET: api/Notifications
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Notification>>> GetNotifications()
-        {
-            return await _context.Notifications.ToListAsync();
-        }
+        //[HttpGet]
+        //public async Task<ActionResult<IEnumerable<Notification>>> GetNotifications()
+        //{
+        //    return await _context.Notifications.ToListAsync();
+        //}
 
         // GET: api/Notifications/5
         [HttpGet("Student/{StudentId}/Notifications")]
@@ -45,8 +45,8 @@ namespace BitCollegeWeb.Controllers
                    Title = d.Title,
                    Description= d.Description,
                    Date = d.Date, 
-                   StudentId = (int)d.StudentId,
-                   TeacherId = (int)d.TeacherId
+                   StudentId = d.StudentId,
+                   TeacherId = d.TeacherId
 
                 }));
             }
@@ -72,8 +72,8 @@ namespace BitCollegeWeb.Controllers
                     Title = d.Title,
                     Description = d.Description,
                     Date = d.Date,
-                    StudentId = (int)d.StudentId,
-                    TeacherId = (int)d.TeacherId
+                    StudentId = d.StudentId,
+                    TeacherId = d.TeacherId
 
                 }));
             }
@@ -87,7 +87,7 @@ namespace BitCollegeWeb.Controllers
         // POST: api/Notifications
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost("Teacher/{TeacherId}/Notification")]
-        public async Task<ActionResult<Assignment>> PostNotification(int TeacherId, [FromBody] CreateNotificationModel model)
+        public async Task<ActionResult<Notification>> PostNotificationByTeacherId(int TeacherId, [FromBody] CreateNotificationModel model)
         { 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -102,8 +102,40 @@ namespace BitCollegeWeb.Controllers
                 Title = model.Title,
                 Description = model.Description,
                 Date = model.Date,
-                StudentId = (int)model.StudentId,
-                TeacherId = (int)model.TeacherId
+                TeacherId = model.TeacherId
+            };
+            _context.Notifications.Add(notification);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return Ok(model);
+        }
+
+        // POST: api/Notifications
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost("Student/{StudentId}/Notification")]
+        public async Task<ActionResult<Notification>> PostNotificationByStudentId(int StudentId, [FromBody] CreateNotificationModel model)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            Student student = await _context.Students.FindAsync(StudentId);
+
+            if (student == null)
+                return NotFound();
+
+            Notification notification = new Notification
+            {
+                Title = model.Title,
+                Description = model.Description,
+                Date = model.Date,
+                StudentId = model.StudentId
             };
             _context.Notifications.Add(notification);
             try

@@ -9,7 +9,7 @@ namespace BitCollegeWeb.Models.Chat
     {
         public int ChatId { get; set; }
         public string Content { get; set; }
-        public int ClassroomId { get; set; }
-        public int TeacherId { get; set; }
+        public int? ClassroomId { get; set; }
+        public int? TeacherId { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace BitCollegeWeb.Models.Notification
         public string Title { get; set; }
         public string Description { get; set; }
         public DateTime Date { get; set; }
-        public int StudentId { get; set; }
-        public int TeacherId { get; set; }
+        public int? StudentId { get; set; }
+        public int? TeacherId { get; set; }
     }
 }

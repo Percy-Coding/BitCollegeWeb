@@ -11,7 +11,7 @@ using BitCollegeWeb.Models.Chat;
 
 namespace BitCollegeWeb.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api")]
     [ApiController]
     public class ChatsController : ControllerBase
     {
@@ -23,7 +23,7 @@ namespace BitCollegeWeb.Controllers
         }
 
         // GET: api/Chats
-        [HttpGet]
+        [HttpGet("Chats")]
         public async Task<IEnumerable<ChatModel>> GetChats()
         {
             var ChatList = await _context.Chats.ToListAsync();
@@ -38,7 +38,7 @@ namespace BitCollegeWeb.Controllers
         }
 
         // GET: api/Chats/5
-        [HttpGet("{id}")]
+        [HttpGet("Chat/{id}")]
         public async Task<IActionResult> GetChatById(int id)
         {
             var chat = await _context.Chats.FindAsync(id);
@@ -59,19 +59,51 @@ namespace BitCollegeWeb.Controllers
 
         // POST: api/Chats
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult> PostChat([FromBody] CreateChatModel model)
+        [HttpPost("Classroom/{ClassroomId}/Chats")]
+        public async Task<ActionResult<Chat>> PostChatByClassroomId(int ClassroomId,[FromBody] CreateChatModel model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
+            Classroom classroom = await _context.Classrooms.FindAsync(ClassroomId);
+
+            if (classroom == null)
+                return NotFound();
+
             Chat chat = new Chat
             {
                 Content = model.Content,
-                ClassroomId = model.ClassroomId,
-                TeacherId = model.TeacherId
+                ClassroomId = ClassroomId
             };
+            _context.Chats.Add(chat);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
 
+            return Ok(model);
+        }
+
+        [HttpPost("Teacher/{TeacherId}/Chats")]
+        public async Task<ActionResult<Chat>> PostChatByTeacherId(int TeacherId, [FromBody] CreateChatModel model)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            Teacher teacher = await _context.Teachers.FindAsync(TeacherId);
+
+            if (teacher == null)
+                return NotFound();
+
+            Chat chat = new Chat
+            {
+                Content = model.Content,
+                TeacherId = TeacherId
+            };
             _context.Chats.Add(chat);
             try
             {
@@ -86,7 +118,7 @@ namespace BitCollegeWeb.Controllers
         }
 
         // DELETE: api/Chats/5
-        [HttpDelete("{id}")]
+        [HttpDelete("Chat/{id}")]
         public async Task<IActionResult> DeleteChat(int id)
         {
             var chat = await _context.Chats.FindAsync(id);
