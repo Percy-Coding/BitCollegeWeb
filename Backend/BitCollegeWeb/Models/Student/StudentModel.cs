@@ -1,4 +1,8 @@
-﻿using System;
+﻿using BitCollegeWeb.Models;
+using BitCollegeWeb.Models.Inscription;
+using BitCollegeWeb.Models.Registration;
+using BitCollegeWeb.Models.Schedule;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,10 +13,8 @@ namespace BitCollegeWeb.Models.Student
     {
         public int StudentId { get; set; }
         public int StudentExperienceId { get; set; }
-        public  List<ScheduleModel> Schedules { get; set; }
-        public virtual ICollection<Notification> Notifications { get; set; }
-        public virtual ICollection<Registration> Registrations { get; set; }
-        public virtual ICollection<Inscription> Inscriptions { get; set; }
-        public virtual ICollection<StudentSection> StudentSections { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Level { get; set; }
     }
 }

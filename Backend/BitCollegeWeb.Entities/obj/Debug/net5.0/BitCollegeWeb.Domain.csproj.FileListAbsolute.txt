@@ -9,3 +9,15 @@ C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitColleg
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb.Entities\obj\Debug\net5.0\BitCollegeWeb.Domain.dll
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb.Entities\obj\Debug\net5.0\ref\BitCollegeWeb.Domain.dll
 C:\Users\USUARIO\Desktop\BackEnd Junior Web Devs\BitCollegeWeb\Backend\BitCollegeWeb.Entities\obj\Debug\net5.0\BitCollegeWeb.Domain.pdb
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Entities\bin\Debug\net5.0\BitCollegeWeb.Domain.deps.json
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Entities\bin\Debug\net5.0\BitCollegeWeb.Domain.dll
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Entities\bin\Debug\net5.0\ref\BitCollegeWeb.Domain.dll
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Entities\bin\Debug\net5.0\BitCollegeWeb.Domain.pdb
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Entities\obj\Debug\net5.0\BitCollegeWeb.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Entities\obj\Debug\net5.0\BitCollegeWeb.Domain.AssemblyInfoInputs.cache
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Entities\obj\Debug\net5.0\BitCollegeWeb.Domain.AssemblyInfo.cs
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Entities\obj\Debug\net5.0\BitCollegeWeb.Domain.csproj.CoreCompileInputs.cache
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Entities\obj\Debug\net5.0\BitCollegeWeb.Domain.dll
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Entities\obj\Debug\net5.0\ref\BitCollegeWeb.Domain.dll
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Entities\obj\Debug\net5.0\BitCollegeWeb.Domain.pdb
+E:\ProyectosPersonales\BitCollegeWeb\BitCollegeWeb\Backend\BitCollegeWeb.Entities\obj\Debug\net5.0\BitCollegeWeb.Domain.csproj.AssemblyReference.cache
